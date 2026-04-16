@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.billsnap.manager.ui.onboarding.OnboardingFragment"
+        android:label="Welcome">
+        <action android:id="@+id/action_onboardingFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/onboardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.billsnap.manager.ui.home.HomeFragment"
+        android:label="Home">
+        <action android:id="@+id/action_home_to_camera"
+            app:destination="@id/cameraFragment" />
+        <action android:id="@+id/action_home_to_gallery"
+            app:destination="@id/galleryFragment" />
+        <action android:id="@+id/action_home_to_profiles"
+            app:destination="@id/profilesFragment" />
+        <action android:id="@+id/action_home_to_workers"
+            app:destination="@id/workersFragment" />
+        <action android:id="@+id/action_home_to_dashboard"
+            app:destination="@id/dashboardFragment" />
+        <action android:id="@+id/action_home_to_settings"
+            app:destination="@id/settingsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cameraFragment"
+        android:name="com.billsnap.manager.ui.camera.CameraFragment"
+        android:label="Camera">
+        <action android:id="@+id/action_camera_to_preview"
+            app:destination="@id/previewFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/previewFragment"
+        android:name="com.billsnap.manager.ui.preview.PreviewFragment"
+        android:label="Preview">
+        <action android:id="@+id/action_preview_to_save"
+            app:destination="@id/saveFormFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/saveFormFragment"
+        android:name="com.billsnap.manager.ui.save.SaveFormFragment"
+        android:label="Save">
+        <action android:id="@+id/action_save_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+        <action android:id="@+id/action_save_to_addCustomer"
+            app:destination="@id/addCustomerFragment" />
+        <action android:id="@+id/action_save_to_profileDetail"
+            app:destination="@id/profileDetailFragment"
+            app:popUpTo="@id/profileDetailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/galleryFragment"
+        android:name="com.billsnap.manager.ui.gallery.GalleryFragment"
+        android:label="Gallery">
+        <argument
+            android:name="filterStatus"
+            app:argType="string"
+            android:defaultValue="" />
+        <action android:id="@+id/action_gallery_to_detail"
+            app:destination="@id/detailFragment" />
+        <action android:id="@+id/action_gallery_to_camera"
+            app:destination="@id/cameraFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.billsnap.manager.ui.detail.DetailFragment"
+        android:label="Detail">
+        <action android:id="@+id/action_detail_to_fullImage"
+            app:destination="@id/fullImageFragment" />
+        <action android:id="@+id/action_detail_to_ocrText"
+            app:destination="@id/ocrTextFragment" />
+        <action android:id="@+id/action_detail_to_profileDetail"
+            app:destination="@id/profileDetailFragment" />
+        <action android:id="@+id/action_detail_to_addCustomer"
+            app:destination="@id/addCustomerFragment" />
+        <action android:id="@+id/action_detail_to_camera"
+            app:destination="@id/cameraFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fullImageFragment"
+        android:name="com.billsnap.manager.ui.detail.FullImageFragment"
+        android:label="Full Image" />
+
+    <fragment
+        android:id="@+id/ocrTextFragment"
+        android:name="com.billsnap.manager.ui.detail.OcrTextFragment"
+        android:label="OCR Results" />
+
+    <!-- Profile Screens -->
+    <fragment
+        android:id="@+id/profilesFragment"
+        android:name="com.billsnap.manager.ui.profile.ProfilesFragment"
+        android:label="Profiles">
+        <action android:id="@+id/action_profiles_to_profileDetail"
+            app:destination="@id/profileDetailFragment" />
+        <action android:id="@+id/action_profiles_to_addCustomer"
+            app:destination="@id/addCustomerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileDetailFragment"
+        android:name="com.billsnap.manager.ui.profile.ProfileDetailFragment"
+        android:label="Profile Detail">
+        <action android:id="@+id/action_profileDetail_to_camera"
+            app:destination="@id/cameraFragment" />
+        <action android:id="@+id/action_profileDetail_to_detail"
+            app:destination="@id/detailFragment" />
+        <action android:id="@+id/action_profileDetail_to_addCustomer"
+            app:destination="@id/addCustomerFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/addCustomerFragment"
+        android:name="com.billsnap.manager.ui.profile.AddCustomerFragment"
+        android:label="Add Customer" />
+
+    <!-- Dashboard -->
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.billsnap.manager.ui.dashboard.DashboardFragment"
+        android:label="Dashboard">
+        <action android:id="@+id/action_dashboard_to_gallery"
+            app:destination="@id/galleryFragment" />
+        <action android:id="@+id/action_dashboard_to_profiles"
+            app:destination="@id/profilesFragment" />
+        <action android:id="@+id/action_dashboard_to_detail"
+            app:destination="@id/detailFragment" />
+        <action android:id="@+id/action_dashboard_to_profileDetail"
+            app:destination="@id/profileDetailFragment" />
+    </fragment>
+
+    <!-- Settings -->
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.billsnap.manager.ui.settings.SettingsFragment"
+        android:label="Settings" />
+
+    <!-- Lock Screen -->
+    <fragment
+        android:id="@+id/lockFragment"
+        android:name="com.billsnap.manager.ui.lock.LockFragment"
+        android:label="Lock">
+        <action android:id="@+id/action_lock_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/lockFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <!-- Workers Screens -->
+    <fragment
+        android:id="@+id/workersFragment"
+        android:name="com.billsnap.manager.ui.workers.WorkersFragment"
+        android:label="Workers">
+        <action android:id="@+id/action_workers_to_invite"
+            app:destination="@id/inviteWorkerFragment" />
+        <action android:id="@+id/action_workers_to_workerDetail"
+            app:destination="@id/workerDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/workerDetailFragment"
+        android:name="com.billsnap.manager.ui.workers.WorkerDetailFragment"
+        android:label="Worker Details">
+        <argument
+            android:name="workerId"
+            app:argType="string" />
+        <action android:id="@+id/action_workerDetail_to_workerLogs"
+            app:destination="@id/workerLogsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/workerLogsFragment"
+        android:name="com.billsnap.manager.ui.workers.WorkerLogsFragment"
+        android:label="Activity Logs">
+        <argument
+            android:name="workerId"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/inviteWorkerFragment"
+        android:name="com.billsnap.manager.ui.workers.InviteWorkerFragment"
+        android:label="Invite Worker" />
+
+    <fragment
+        android:id="@+id/acceptInviteFragment"
+        android:name="com.billsnap.manager.ui.workers.AcceptInviteFragment"
+        android:label="Accept Invite">
+        <deepLink app:uri="https://billsnap.com/invite?token={token}" />
+        <argument
+            android:name="token"
+            app:argType="string" />
+        <action android:id="@+id/action_acceptInvite_to_home"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/acceptInviteFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+</navigation>

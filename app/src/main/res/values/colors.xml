@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary brand colors -->
+    <color name="seed">#4FC3F7</color>
+
+    <!-- ═══ Share Card — Fixed Palette (no dynamic) ═══ -->
+    <color name="share_bg_top">#0F172A</color>
+    <color name="share_bg_bottom">#111827</color>
+    <color name="share_card_bg">#1E293B</color>
+    <color name="share_accent">#7C3AED</color>
+    <color name="share_paid_green">#16A34A</color>
+    <color name="share_paid_container">#052E16</color>
+    <color name="share_unpaid_red">#EF4444</color>
+    <color name="share_unpaid_container">#3F0B0B</color>
+    <color name="share_overdue_container">#7F1D1D</color>
+    <color name="share_label_muted">#94A3B8</color>
+    <color name="share_divider">#334155</color>
+    <color name="share_white">#FFFFFF</color>
+    <color name="share_pay_card_bg">#0F172A</color>
+
+    <!-- Status indicators (theme-independent) -->
+    <color name="status_paid">#4CAF50</color>
+    <color name="status_unpaid">#F44336</color>
+    <color name="status_overdue">#FF9800</color>
+    <color name="status_due_soon">#2196F3</color>
+
+    <!-- Camera UI -->
+    <color name="camera_button_bg">#80000000</color>
+
+    <!-- ═══ Night / Dark Theme Colors ═══ -->
+    <color name="night_page_background">#0F1117</color>
+    <color name="night_card_surface">#1A1D23</color>
+    <color name="night_card_stroke">#2E3140</color>
+    <color name="night_text_primary">#FFFFFFFF</color>
+    <color name="night_text_secondary">#77FFFFFF</color>
+    <color name="night_text_hint">#55FFFFFF</color>
+    <color name="night_accent_primary">#7C4DFF</color>
+    <color name="night_accent_light">#B388FF</color>
+    <color name="night_accent_container">#2D1B69</color>
+    <color name="night_button_primary">#7C4DFF</color>
+    <color name="night_danger_text">#FF5252</color>
+    <color name="night_divider">#2E3140</color>
+    <color name="night_icon_tint">#CCFFFFFF</color>
+    <color name="night_input_background">#1A1D23</color>
+
+    <!-- Night Dashboard Specifics -->
+    <color name="bg_dashboard_start_night">#1A1035</color>
+    <color name="bg_dashboard_center_night">#0D1A40</color>
+    <color name="bg_dashboard_end_night">#0F1117</color>
+    <color name="hero_card_bg_night">#22FFFFFF</color>
+    <color name="stat_paid_bg_night">#20388E3C</color>
+    <color name="stat_unpaid_bg_night">#20D32F2F</color>
+
+    <!-- ═══ Day / Light Theme Colors ═══ -->
+    <color name="day_page_background">#FFFFFF</color>
+    <color name="day_card_surface">#F5F9F5</color>
+    <color name="day_card_stroke">#E0E5E0</color>
+    <color name="day_text_primary">#1A1A1A</color>
+    <color name="day_text_secondary">#666666</color>
+    <color name="day_text_hint">#999999</color>
+    <color name="day_accent_primary">#16A34A</color>
+    <color name="day_accent_light">#22C55E</color>
+    <color name="day_accent_container">#DCFCE7</color>
+    <color name="day_button_primary">#16A34A</color>
+    <color name="day_danger_text">#DC2626</color>
+    <color name="day_divider">#E5E7EB</color>
+    <color name="day_icon_tint">#555555</color>
+    <color name="day_input_background">#F5F9F5</color>
+
+    <!-- Day Dashboard Specifics -->
+    <color name="bg_dashboard_start_day">#E8F5E9</color>
+    <color name="bg_dashboard_center_day">#F1F8E9</color>
+    <color name="bg_dashboard_end_day">#FFFFFF</color>
+    <color name="hero_card_bg_day">#11000000</color>
+    <color name="stat_paid_bg_day">#1A16A34A</color>
+    <color name="stat_unpaid_bg_day">#15DC2626</color>
+
+    <!-- Dynamic Dashboard Colors (Defaults to Day Mode) -->
+    <color name="bg_dashboard_start">@color/bg_dashboard_start_day</color>
+    <color name="bg_dashboard_center">@color/bg_dashboard_center_day</color>
+    <color name="bg_dashboard_end">@color/bg_dashboard_end_day</color>
+    <color name="hero_card_bg">@color/hero_card_bg_day</color>
+    <color name="stat_paid_bg">@color/stat_paid_bg_day</color>
+    <color name="stat_unpaid_bg">@color/stat_unpaid_bg_day</color>
+
+    <!-- Day theme Material3 color roles -->
+    <color name="day_primary">#16A34A</color>
+    <color name="day_onPrimary">#FFFFFF</color>
+    <color name="day_primaryContainer">#DCFCE7</color>
+    <color name="day_onPrimaryContainer">#052E16</color>
+    <color name="day_secondary">#4B6358</color>
+    <color name="day_onSecondary">#FFFFFF</color>
+    <color name="day_secondaryContainer">#CDE8DA</color>
+    <color name="day_onSecondaryContainer">#072017</color>
+    <color name="day_tertiary">#3F6374</color>
+    <color name="day_onTertiary">#FFFFFF</color>
+    <color name="day_tertiaryContainer">#C2E8FC</color>
+    <color name="day_onTertiaryContainer">#001F29</color>
+    <color name="day_error">#DC2626</color>
+    <color name="day_onError">#FFFFFF</color>
+    <color name="day_errorContainer">#FEE2E2</color>
+    <color name="day_onErrorContainer">#7F1D1D</color>
+    <color name="day_background">#FFFFFF</color>
+    <color name="day_onBackground">#1A1A1A</color>
+    <color name="day_surface">#FFFFFF</color>
+    <color name="day_onSurface">#1A1A1A</color>
+    <color name="day_surfaceVariant">#F0F4F0</color>
+    <color name="day_onSurfaceVariant">#414941</color>
+    <color name="day_outline">#C4C8C4</color>
+</resources>

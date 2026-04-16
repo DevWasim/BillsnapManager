@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        BillSnap Theme System — Night (Dark) + Day (Light)
+        Uses AppCompatDelegate.setDefaultNightMode() controlled by ThemeManager.
+        Night = existing dark purple palette (default).
+        Day = green + white ecommerce dashboard palette.
+    -->
+
+    <!-- ═══════════════════════════════════════════════
+         DEFAULT (LIGHT) THEME — Green + White palette
+         ═══════════════════════════════════════════════ -->
+    <style name="Base.Theme.BillSnapManager" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Material3 color roles — Day/Light -->
+        <item name="colorPrimary">@color/day_primary</item>
+        <item name="colorOnPrimary">@color/day_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/day_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/day_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/day_secondary</item>
+        <item name="colorOnSecondary">@color/day_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/day_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/day_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/day_tertiary</item>
+        <item name="colorOnTertiary">@color/day_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/day_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/day_onTertiaryContainer</item>
+        <item name="colorError">@color/day_error</item>
+        <item name="colorOnError">@color/day_onError</item>
+        <item name="colorErrorContainer">@color/day_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/day_onErrorContainer</item>
+        <item name="android:colorBackground">@color/day_background</item>
+        <item name="colorOnBackground">@color/day_onBackground</item>
+        <item name="colorSurface">@color/day_surface</item>
+        <item name="colorOnSurface">@color/day_onSurface</item>
+        <item name="colorSurfaceVariant">@color/day_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/day_onSurfaceVariant</item>
+        <item name="colorOutline">@color/day_outline</item>
+
+        <!-- Status bar / nav bar — light -->
+        <item name="android:statusBarColor">@color/day_background</item>
+        <item name="android:navigationBarColor">@color/day_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Custom semantic attributes — Day values -->
+        <item name="colorPageBackground">@color/day_page_background</item>
+        <item name="colorCardSurface">@color/day_card_surface</item>
+        <item name="colorCardStroke">@color/day_card_stroke</item>
+        <item name="colorTextPrimary">@color/day_text_primary</item>
+        <item name="colorTextSecondary">@color/day_text_secondary</item>
+        <item name="colorTextHint">@color/day_text_hint</item>
+        <item name="colorAccentPrimary">@color/day_accent_primary</item>
+        <item name="colorAccentLight">@color/day_accent_light</item>
+        <item name="colorAccentContainer">@color/day_accent_container</item>
+        <item name="colorButtonPrimary">@color/day_button_primary</item>
+        <item name="colorDangerText">@color/day_danger_text</item>
+        <item name="colorDivider">@color/day_divider</item>
+        <item name="colorIconTint">@color/day_icon_tint</item>
+        <item name="colorInputBackground">@color/day_input_background</item>
+        <item name="colorStatusBarBackground">@color/day_page_background</item>
+    </style>
+
+    <style name="Theme.BillSnapManager" parent="Base.Theme.BillSnapManager" />
+
+    <!-- ═══ Utility Styles ═══ -->
+
+    <!-- Circular image shape for profile images -->
+    <style name="CircleImage" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <style name="ShapeAppearanceOverlay.App.CornerSize50Percent" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">50%</item>
+    </style>
+
+    <!-- Status badge backgrounds -->
+    <style name="StatusBadge.Overdue" parent="">
+        <item name="android:background">@drawable/bg_status_overdue</item>
+    </style>
+
+    <style name="StatusBadge.DueSoon" parent="">
+        <item name="android:background">@drawable/bg_status_due_soon</item>
+    </style>
+
+    <!-- Default (English) text appearance stubs — overridden by values-ur with Nastaliq sizes -->
+    <style name="Urdu.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge" />
+    <style name="Urdu.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium" />
+    <style name="Urdu.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall" />
+    <style name="Urdu.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge" />
+    <style name="Urdu.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium" />
+    <style name="Urdu.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall" />
+    <style name="Urdu.TitleLarge" parent="TextAppearance.Material3.TitleLarge" />
+    <style name="Urdu.TitleMedium" parent="TextAppearance.Material3.TitleMedium" />
+    <style name="Urdu.TitleSmall" parent="TextAppearance.Material3.TitleSmall" />
+    <style name="Urdu.BodyLarge" parent="TextAppearance.Material3.BodyLarge" />
+    <style name="Urdu.BodyMedium" parent="TextAppearance.Material3.BodyMedium" />
+    <style name="Urdu.BodySmall" parent="TextAppearance.Material3.BodySmall" />
+    <style name="Urdu.LabelLarge" parent="TextAppearance.Material3.LabelLarge" />
+    <style name="Urdu.LabelMedium" parent="TextAppearance.Material3.LabelMedium" />
+    <style name="Urdu.LabelSmall" parent="TextAppearance.Material3.LabelSmall" />
+</resources>

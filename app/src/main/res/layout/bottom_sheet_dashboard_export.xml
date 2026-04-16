@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_dashboard"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorOnSurface"
+        android:layout_marginBottom="16dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportFullSummary"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_full_summary"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_export"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportBillsBreakdown"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_bills_breakdown"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_export"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportCustomersSummary"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_customers_summary"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_export"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportPaymentsReport"
+        style="@style/Widget.Material3.Button.TonalButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_payments_report"
+        android:textAllCaps="false"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_export" />
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- ═══════════════════════════════════════════════
+         NIGHT (DARK) THEME — Existing default
+         ═══════════════════════════════════════════════ -->
+    <style name="Base.Theme.BillSnapManager" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Material3 color roles — Night/Dark -->
+        <item name="colorPrimary">#7C4DFF</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorPrimaryContainer">#2D1B69</item>
+        <item name="colorOnPrimaryContainer">#E8DDFF</item>
+        <item name="colorSecondary">#B388FF</item>
+        <item name="colorOnSecondary">#1A0050</item>
+        <item name="colorSecondaryContainer">#1E1B33</item>
+        <item name="colorOnSecondaryContainer">#D4BBFF</item>
+        <item name="colorTertiary">#80DEEA</item>
+        <item name="colorOnTertiary">#003E47</item>
+        <item name="colorTertiaryContainer">#004F5A</item>
+        <item name="colorOnTertiaryContainer">#AAEEFF</item>
+        <item name="colorError">#FF5252</item>
+        <item name="colorOnError">#690005</item>
+        <item name="colorErrorContainer">#4A0010</item>
+        <item name="colorOnErrorContainer">#FFB4AB</item>
+        <item name="android:colorBackground">#0F1117</item>
+        <item name="colorOnBackground">#FFFFFFFF</item>
+        <item name="colorSurface">#0F1117</item>
+        <item name="colorOnSurface">#FFFFFFFF</item>
+        <item name="colorSurfaceVariant">#1A1D23</item>
+        <item name="colorOnSurfaceVariant">#CCFFFFFF</item>
+        <item name="colorOutline">#2E3140</item>
+
+        <!-- Status bar / nav bar -->
+        <item name="android:statusBarColor">#0F1117</item>
+        <item name="android:navigationBarColor">#0F1117</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Custom semantic attributes — Night values -->
+        <item name="colorPageBackground">@color/night_page_background</item>
+        <item name="colorCardSurface">@color/night_card_surface</item>
+        <item name="colorCardStroke">@color/night_card_stroke</item>
+        <item name="colorTextPrimary">@color/night_text_primary</item>
+        <item name="colorTextSecondary">@color/night_text_secondary</item>
+        <item name="colorTextHint">@color/night_text_hint</item>
+        <item name="colorAccentPrimary">@color/night_accent_primary</item>
+        <item name="colorAccentLight">@color/night_accent_light</item>
+        <item name="colorAccentContainer">@color/night_accent_container</item>
+        <item name="colorButtonPrimary">@color/night_button_primary</item>
+        <item name="colorDangerText">@color/night_danger_text</item>
+        <item name="colorDivider">@color/night_divider</item>
+        <item name="colorIconTint">@color/night_icon_tint</item>
+        <item name="colorInputBackground">@color/night_input_background</item>
+        <item name="colorStatusBarBackground">@color/night_page_background</item>
+    </style>
+</resources>

@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Offscreen share card layout for CUSTOMER PROFILE SUMMARY share image.
+    Rendered to a 1080x1920 bitmap by ShareCardGenerator.
+    All colors use theme attributes for dark/light mode support.
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1080px"
+    android:layout_height="1920px"
+    android:background="?attr/colorSurface">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="40px">
+
+            <!-- ═══ HEADER ═══ -->
+            <TextView
+                android:id="@+id/tvStoreName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                android:textColor="?attr/colorOnSurface"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_marginBottom="8px"
+                tools:text="BillSnap Store" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/customer_statement"
+                android:paddingHorizontal="24px"
+                android:paddingVertical="10px"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:background="@drawable/bg_share_tag"
+                android:layout_marginBottom="32px" />
+
+            <!-- ═══ CUSTOMER INFO ═══ -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24px">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="32px">
+
+                    <!-- Customer Name -->
+                    <TextView
+                        android:id="@+id/tvCustomerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceTitleLarge"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:layout_marginBottom="24px"
+                        tools:text="Muhammad Ali Khan" />
+
+                    <!-- Total Bills -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8px">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_bills_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvTotalBills"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="bold"
+                            tools:text="12" />
+                    </LinearLayout>
+
+                    <!-- Total Paid -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8px">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_paid_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvTotalPaid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold"
+                            tools:text="Rs. 120,000" />
+                    </LinearLayout>
+
+                    <!-- Total Outstanding -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8px">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/total_outstanding_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvTotalOutstanding"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="?attr/colorError"
+                            android:textStyle="bold"
+                            tools:text="Rs. 30,000" />
+                    </LinearLayout>
+
+                    <!-- On-time Payment -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/on_time_payment_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvOnTimePercentage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="bold"
+                            tools:text="75%" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ═══ RECENT ACTIVITY ═══ -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardRecentActivity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24px">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="32px">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/recent_activity"
+                        android:textAppearance="?attr/textAppearanceLabelLarge"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="16px" />
+
+                    <!-- Recent Bill Row 1 -->
+                    <LinearLayout
+                        android:id="@+id/layoutRecentBill1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10px"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvRecentBill1Id"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAppearance="?attr/textAppearanceBodySmall"
+                            android:textColor="?attr/colorOnSurface"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            tools:text="INV-00123" />
+
+                        <TextView
+                            android:id="@+id/tvRecentBill1Amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBodySmall"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="12px"
+                            tools:text="Rs. 5,000" />
+
+                        <TextView
+                            android:id="@+id/tvRecentBill1Status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="12px"
+                            android:paddingVertical="4px"
+                            android:textAppearance="?attr/textAppearanceLabelSmall"
+                            android:background="@drawable/bg_share_tag"
+                            tools:text="Paid" />
+                    </LinearLayout>
+
+                    <!-- Recent Bill Row 2 -->
+                    <LinearLayout
+                        android:id="@+id/layoutRecentBill2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10px"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvRecentBill2Id"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAppearance="?attr/textAppearanceBodySmall"
+                            android:textColor="?attr/colorOnSurface"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            tools:text="INV-00124" />
+
+                        <TextView
+                            android:id="@+id/tvRecentBill2Amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBodySmall"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="12px"
+                            tools:text="Rs. 8,000" />
+
+                        <TextView
+                            android:id="@+id/tvRecentBill2Status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="12px"
+                            android:paddingVertical="4px"
+                            android:textAppearance="?attr/textAppearanceLabelSmall"
+                            android:background="@drawable/bg_share_tag"
+                            tools:text="Unpaid" />
+                    </LinearLayout>
+
+                    <!-- Recent Bill Row 3 -->
+                    <LinearLayout
+                        android:id="@+id/layoutRecentBill3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="10px"
+                        android:visibility="gone"
+                        tools:visibility="visible">
+
+                        <TextView
+                            android:id="@+id/tvRecentBill3Id"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textAppearance="?attr/textAppearanceBodySmall"
+                            android:textColor="?attr/colorOnSurface"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            tools:text="INV-00125" />
+
+                        <TextView
+                            android:id="@+id/tvRecentBill3Amount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBodySmall"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="bold"
+                            android:layout_marginEnd="12px"
+                            tools:text="Rs. 3,500" />
+
+                        <TextView
+                            android:id="@+id/tvRecentBill3Status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingHorizontal="12px"
+                            android:paddingVertical="4px"
+                            android:textAppearance="?attr/textAppearanceLabelSmall"
+                            android:background="@drawable/bg_share_tag"
+                            tools:text="Partial" />
+                    </LinearLayout>
+
+                    <!-- More invoices text -->
+                    <TextView
+                        android:id="@+id/tvMoreInvoices"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceLabelSmall"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:gravity="center"
+                        android:visibility="gone"
+                        tools:visibility="visible"
+                        tools:text="+7 more invoices not shown" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ═══ OVERDUE SUMMARY ═══ -->
+            <LinearLayout
+                android:id="@+id/layoutOverdueSummary"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="24px"
+                android:background="@drawable/bg_share_indicator"
+                android:layout_marginBottom="24px"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <View
+                    android:id="@+id/viewOverdueBar"
+                    android:layout_width="6px"
+                    android:layout_height="48px"
+                    android:background="?attr/colorError"
+                    android:layout_marginEnd="16px" />
+
+                <TextView
+                    android:id="@+id/tvOverdueSummary"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceTitleSmall"
+                    android:textColor="?attr/colorOnErrorContainer"
+                    tools:text="2 invoices overdue" />
+            </LinearLayout>
+
+            <!-- ═══ PAYMENT METHODS ═══ -->
+            <LinearLayout
+                android:id="@+id/layoutPaymentMethods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="24px"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment_methods"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12px" />
+
+                <include
+                    android:id="@+id/paymentMethod1"
+                    layout="@layout/item_share_payment_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8px"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/paymentMethod2"
+                    layout="@layout/item_share_payment_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8px"
+                    android:visibility="gone" />
+
+                <include
+                    android:id="@+id/paymentMethod3"
+                    layout="@layout/item_share_payment_method"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <!-- ═══ FOOTER ═══ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="16px">
+
+                <View
+                    android:layout_width="80px"
+                    android:layout_height="2px"
+                    android:background="?attr/colorOutline"
+                    android:layout_marginBottom="16px" />
+
+                <TextView
+                    android:id="@+id/tvFooterStoreName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="BillSnap Store" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/thank_you_business"
+                    android:textAppearance="?attr/textAppearanceLabelSmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:layout_marginTop="4px" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

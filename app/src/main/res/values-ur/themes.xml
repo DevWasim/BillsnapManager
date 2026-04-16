@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Urdu locale overrides — Nastaliq font + scaled text sizes.
+        Night theme inherits from main BillSnapManager theme.
+        Day theme inherits from BillSnapManager.Day theme.
+    -->
+
+    <!-- ═══ NIGHT + URDU ═══ -->
+    <style name="Theme.BillSnapManager" parent="Base.Theme.BillSnapManager">
+        <!-- Nastaliq font -->
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="fontFamily">@font/nastaliq_family</item>
+
+        <!-- Scaled text appearances for Nastaliq -->
+        <item name="textAppearanceDisplayLarge">@style/Urdu.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/Urdu.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/Urdu.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/Urdu.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/Urdu.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/Urdu.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/Urdu.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/Urdu.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/Urdu.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/Urdu.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/Urdu.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/Urdu.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/Urdu.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/Urdu.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/Urdu.LabelSmall</item>
+    </style>
+
+    <!-- ═══ DAY + URDU ═══ -->
+    <style name="Theme.BillSnapManager.Day" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Material3 Day colors -->
+        <item name="colorPrimary">@color/day_primary</item>
+        <item name="colorOnPrimary">@color/day_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/day_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/day_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/day_secondary</item>
+        <item name="colorOnSecondary">@color/day_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/day_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/day_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/day_tertiary</item>
+        <item name="colorOnTertiary">@color/day_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/day_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/day_onTertiaryContainer</item>
+        <item name="colorError">@color/day_error</item>
+        <item name="colorOnError">@color/day_onError</item>
+        <item name="colorErrorContainer">@color/day_errorContainer</item>
+        <item name="colorOnErrorContainer">@color/day_onErrorContainer</item>
+        <item name="android:colorBackground">@color/day_background</item>
+        <item name="colorOnBackground">@color/day_onBackground</item>
+        <item name="colorSurface">@color/day_surface</item>
+        <item name="colorOnSurface">@color/day_onSurface</item>
+        <item name="colorSurfaceVariant">@color/day_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/day_onSurfaceVariant</item>
+        <item name="colorOutline">@color/day_outline</item>
+        <item name="android:statusBarColor">@color/day_background</item>
+        <item name="android:navigationBarColor">@color/day_background</item>
+        <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Custom semantic attributes — Day -->
+        <item name="colorPageBackground">@color/day_page_background</item>
+        <item name="colorCardSurface">@color/day_card_surface</item>
+        <item name="colorCardStroke">@color/day_card_stroke</item>
+        <item name="colorTextPrimary">@color/day_text_primary</item>
+        <item name="colorTextSecondary">@color/day_text_secondary</item>
+        <item name="colorTextHint">@color/day_text_hint</item>
+        <item name="colorAccentPrimary">@color/day_accent_primary</item>
+        <item name="colorAccentLight">@color/day_accent_light</item>
+        <item name="colorAccentContainer">@color/day_accent_container</item>
+        <item name="colorButtonPrimary">@color/day_button_primary</item>
+        <item name="colorDangerText">@color/day_danger_text</item>
+        <item name="colorDivider">@color/day_divider</item>
+        <item name="colorIconTint">@color/day_icon_tint</item>
+        <item name="colorInputBackground">@color/day_input_background</item>
+        <item name="colorStatusBarBackground">@color/day_page_background</item>
+
+        <!-- Nastaliq font -->
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="fontFamily">@font/nastaliq_family</item>
+
+        <!-- Scaled text appearances for Nastaliq -->
+        <item name="textAppearanceDisplayLarge">@style/Urdu.DisplayLarge</item>
+        <item name="textAppearanceDisplayMedium">@style/Urdu.DisplayMedium</item>
+        <item name="textAppearanceDisplaySmall">@style/Urdu.DisplaySmall</item>
+        <item name="textAppearanceHeadlineLarge">@style/Urdu.HeadlineLarge</item>
+        <item name="textAppearanceHeadlineMedium">@style/Urdu.HeadlineMedium</item>
+        <item name="textAppearanceHeadlineSmall">@style/Urdu.HeadlineSmall</item>
+        <item name="textAppearanceTitleLarge">@style/Urdu.TitleLarge</item>
+        <item name="textAppearanceTitleMedium">@style/Urdu.TitleMedium</item>
+        <item name="textAppearanceTitleSmall">@style/Urdu.TitleSmall</item>
+        <item name="textAppearanceBodyLarge">@style/Urdu.BodyLarge</item>
+        <item name="textAppearanceBodyMedium">@style/Urdu.BodyMedium</item>
+        <item name="textAppearanceBodySmall">@style/Urdu.BodySmall</item>
+        <item name="textAppearanceLabelLarge">@style/Urdu.LabelLarge</item>
+        <item name="textAppearanceLabelMedium">@style/Urdu.LabelMedium</item>
+        <item name="textAppearanceLabelSmall">@style/Urdu.LabelSmall</item>
+    </style>
+
+    <!-- ═══ Nastaliq scaled text appearance styles ═══ -->
+    <style name="Urdu.DisplayLarge" parent="TextAppearance.Material3.DisplayLarge">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">42sp</item>
+    </style>
+    <style name="Urdu.DisplayMedium" parent="TextAppearance.Material3.DisplayMedium">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">34sp</item>
+    </style>
+    <style name="Urdu.DisplaySmall" parent="TextAppearance.Material3.DisplaySmall">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">27sp</item>
+    </style>
+    <style name="Urdu.HeadlineLarge" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="Urdu.HeadlineMedium" parent="TextAppearance.Material3.HeadlineMedium">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">21sp</item>
+    </style>
+    <style name="Urdu.HeadlineSmall" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="Urdu.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+    <style name="Urdu.TitleMedium" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <style name="Urdu.TitleSmall" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+    <style name="Urdu.BodyLarge" parent="TextAppearance.Material3.BodyLarge">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">13sp</item>
+    </style>
+    <style name="Urdu.BodyMedium" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+    <style name="Urdu.BodySmall" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="Urdu.LabelLarge" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+    <style name="Urdu.LabelMedium" parent="TextAppearance.Material3.LabelMedium">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+    <style name="Urdu.LabelSmall" parent="TextAppearance.Material3.LabelSmall">
+        <item name="android:fontFamily">@font/nastaliq_family</item>
+        <item name="android:textSize">9sp</item>
+    </style>
+</resources>

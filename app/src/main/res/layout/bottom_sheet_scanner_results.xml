@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorSurface"
+    android:padding="16dp"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="200dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+    <!-- Handle -->
+    <View
+        android:id="@+id/dragHandle"
+        android:layout_width="32dp"
+        android:layout_height="4dp"
+        android:background="?attr/colorOutline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvSheetTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Extracted Details"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintTop_toBottomOf="@id/dragHandle"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Vendor -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilVendor"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Vendor"
+        app:layout_constraintTop_toBottomOf="@id/tvSheetTitle">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etVendor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textCapWords" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Total -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilTotal"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="4dp"
+        android:hint="Total Amount"
+        app:layout_constraintEnd_toStartOf="@id/tilDate"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tilVendor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etTotal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Date -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilDate"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox.Dense"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="4dp"
+        android:hint="Date"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tilTotal"
+        app:layout_constraintTop_toBottomOf="@id/tilVendor">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/etDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="date" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- ProgressBar for processing High Res -->
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progressScanning"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tilTotal" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirmScan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Confirm &amp; Proceed"
+        app:icon="@drawable/ic_check"
+        app:layout_constraintTop_toBottomOf="@id/progressScanning" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

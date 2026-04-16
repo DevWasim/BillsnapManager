@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">بل سنیپ مینیجر</string>
+    <string name="home_subtitle">اپنے بلز کیپچر اور مینیج کریں</string>
+    <string name="camera">کیمرا</string>
+    <string name="gallery">گیلری</string>
+    <string name="profiles">پروفائلز</string>
+    <string name="flip_camera">کیمرا پلٹیں</string>
+    <string name="capture">فوٹو کھینچیں</string>
+    <string name="captured_image">کھینچی گئی تصویر</string>
+    <string name="retake">دوبارہ لیں</string>
+    <string name="save">محفوظ کریں</string>
+    <string name="save_details">تفصیلات محفوظ کریں</string>
+    <string name="name_hint">نام *</string>
+    <string name="notes_hint">نوٹس (اختیاری)</string>
+    <string name="payment_status">ادائیگی کی حیثیت</string>
+    <string name="paid">ادا شدہ</string>
+    <string name="unpaid">غیر ادا</string>
+    <string name="overdue">مدت گزر گئی</string>
+    <string name="due_soon">جلد واجب الادا</string>
+    <string name="save_bill">بل محفوظ کریں</string>
+    <string name="search_hint">نام سے تلاش کریں…</string>
+    <string name="export_pdf">PDF میں ایکسپورٹ</string>
+    <string name="no_bills">ابھی کوئی بل نہیں۔ شروع کرنے کے لیے کیمرا دبائیں!</string>
+    <string name="bill_thumbnail">بل تھمب نیل</string>
+    <string name="bill_image">بل تصویر</string>
+    <string name="notes_label">نوٹس</string>
+    <string name="date_label">تاریخ</string>
+    <string name="time_label">وقت</string>
+    <string name="saved_to_gallery">تصویر Pictures/BillSnap میں محفوظ ہو گئی</string>
+    <string name="close">بند کریں</string>
+
+    <!-- Profile strings -->
+    <string name="add_profile">پروفائل شامل کریں</string>
+    <string name="save_profile">پروفائل محفوظ کریں</string>
+    <string name="no_profiles">ابھی کوئی پروفائل نہیں۔ اپنا پہلا گاہک شامل کرنے کے لیے + دبائیں!</string>
+    <string name="no_bills_for_customer">اس گاہک کے لیے ابھی کوئی بل نہیں۔</string>
+    <string name="profile_image">پروفائل تصویر</string>
+    <string name="search_profiles_hint">پروفائلز تلاش کریں…</string>
+    <string name="customer_name_hint">گاہک کا نام *</string>
+    <string name="phone_hint">فون (اختیاری)</string>
+    <string name="details_hint">تفصیلات (اختیاری)</string>
+    <string name="pick_photo">تصویر چنیں</string>
+    <string name="customer_hint">گاہک</string>
+
+    <!-- Reminder strings -->
+    <string name="set_reminder">یاد دہانی سیٹ کریں</string>
+    <string name="pick_date">تاریخ چنیں</string>
+    <string name="pick_time">وقت چنیں</string>
+    <string name="reminder_notification_title">بل سنیپ یاد دہانی</string>
+    <string name="reminder_notification_text">بل \"%1$s\" واجب الادا ہے۔ دیکھنے کے لیے ٹیپ کریں۔</string>
+
+    <!-- Detail screen -->
+    <string name="created_on">بنایا گیا</string>
+    <string name="paid_on">ادا کیا گیا</string>
+
+    <!-- Dashboard strings -->
+    <string name="dashboard">ڈیش بورڈ</string>
+    <string name="total_bills">کل بلز</string>
+    <string name="total_customers">گاہک</string>
+    <string name="monthly_overview">ماہانہ جائزہ</string>
+
+    <!-- Settings strings -->
+    <string name="settings">ترتیبات</string>
+    <string name="security">سیکیورٹی</string>
+    <string name="enable_app_lock">ایپ لاک فعال کریں</string>
+    <string name="lock_method">لاک طریقہ</string>
+    <string name="fingerprint">فنگر پرنٹ</string>
+    <string name="pin_code">پن کوڈ</string>
+    <string name="set_pin">پن سیٹ کریں</string>
+    <string name="enter_pin">پن درج کریں</string>
+    <string name="confirm_pin">پن کی تصدیق کریں</string>
+    <string name="pin_mismatch">پن مماثل نہیں ہیں</string>
+    <string name="pin_set_success">پن کامیابی سے سیٹ ہو گیا</string>
+    <string name="unlock_with_fingerprint">فنگر پرنٹ سے ان لاک کریں</string>
+    <string name="use_pin_instead">پن استعمال کریں</string>
+    <string name="cloud_backup">کلاؤڈ بیک اپ</string>
+    <string name="sign_in_google">گوگل سے سائن ان</string>
+    <string name="sign_out">سائن آؤٹ</string>
+    <string name="sync_now">ابھی سنک کریں</string>
+    <string name="last_synced">آخری سنک</string>
+    <string name="never_synced">کبھی نہیں</string>
+    <string name="syncing">سنک ہو رہا ہے…</string>
+    <string name="sync_complete">سنک مکمل</string>
+    <string name="sync_failed">سنک ناکام</string>
+    <string name="signed_in_as">%1$s کے طور پر سائن ان</string>
+
+    <!-- Gallery filter strings -->
+    <string name="filter">فلٹر</string>
+    <string name="all_statuses">تمام حیثیتیں</string>
+    <string name="all_customers">تمام گاہک</string>
+    <string name="start_date">شروع تاریخ</string>
+    <string name="end_date">اختتامی تاریخ</string>
+    <string name="apply_filter">لاگو کریں</string>
+    <string name="reset_filter">ری سیٹ</string>
+    <string name="delete_confirm">یہ بل حذف کریں؟</string>
+    <string name="delete_confirm_multi">%1$d منتخب بلز حذف کریں؟</string>
+    <string name="cancel">منسوخ</string>
+    <string name="delete">حذف کریں</string>
+    <string name="marked_as_paid">ادا شدہ نشان زد</string>
+    <string name="undo">واپس لیں</string>
+
+    <!-- Export strings -->
+    <string name="export_options">ایکسپورٹ آپشنز</string>
+    <string name="export_single">منتخب ایکسپورٹ</string>
+    <string name="export_unpaid">صرف غیر ادا ایکسپورٹ</string>
+    <string name="export_date_range">تاریخ کے مطابق ایکسپورٹ</string>
+    <string name="export_by_customer">گاہک کے مطابق ایکسپورٹ</string>
+    <string name="export_filtered">موجودہ نتائج ایکسپورٹ</string>
+    <string name="select_customer">گاہک منتخب کریں</string>
+
+    <!-- OCR strings -->
+    <string name="ocr_mode">OCR موڈ</string>
+    <string name="ocr_scanning">ٹیکسٹ سکین ہو رہا ہے…</string>
+    <string name="ocr_no_text">کوئی ٹیکسٹ نہیں ملا</string>
+
+    <!-- Lock screen -->
+    <string name="app_locked">ایپ لاک ہے</string>
+    <string name="enter_pin_to_unlock">ان لاک کرنے کے لیے پن درج کریں</string>
+    <string name="wrong_pin">غلط پن</string>
+
+    <!-- Reminder -->
+    <string name="reminder_date">یاد دہانی</string>
+    <string name="customer_label">گاہک</string>
+    <string name="none">کوئی نہیں</string>
+    <string name="add_new_profile">+ نیا پروفائل شامل کریں</string>
+
+    <!-- Dashboard export -->
+    <string name="export_dashboard">ڈیش بورڈ ایکسپورٹ</string>
+    <string name="export_full_summary">مکمل ڈیش بورڈ خلاصہ ایکسپورٹ</string>
+    <string name="export_bills_breakdown">بلز کی تفصیل ایکسپورٹ</string>
+    <string name="export_customers_summary">گاہکوں کا خلاصہ ایکسپورٹ</string>
+    <string name="export_payments_report">ادائیگی رپورٹ ایکسپورٹ</string>
+
+    <!-- Detail extras -->
+    <string name="export_bill">بل ایکسپورٹ</string>
+    <string name="status_history">حیثیت کی تاریخ</string>
+    <string name="created_label">بنایا گیا</string>
+    <string name="paid_label">ادا شدہ</string>
+    <string name="reminder_label">یاد دہانی</string>
+    <string name="not_set">سیٹ نہیں</string>
+
+    <!-- Cloud Backup extras -->
+    <string name="backup_now">ابھی بیک اپ</string>
+    <string name="restore_backup">بیک اپ بحال کریں</string>
+    <string name="connected_to">%1$s سے منسلک</string>
+    <string name="disconnect">منقطع کریں</string>
+    <string name="restoring">بحال ہو رہا ہے…</string>
+    <string name="restore_complete">بحالی مکمل</string>
+    <string name="restore_failed">بحالی ناکام</string>
+    <string name="sync_status_idle">حیثیت: بیکار</string>
+    <string name="sync_status_syncing">حیثیت: سنک ہو رہا ہے…</string>
+    <string name="sync_status_error">حیثیت: خرابی</string>
+    <string name="download_backup">بیک اپ فائل ڈاؤن لوڈ</string>
+    <string name="google_sign_in_not_configured">گوگل سائن ان کنفیگر نہیں ہے۔ Firebase سے google-services.json شامل کریں اور دوبارہ بلڈ کریں۔</string>
+    <string name="google_sign_in_canceled">گوگل سائن ان منسوخ ہو گیا۔</string>
+    <string name="google_sign_in_missing_id_token">گوگل سائن ان نے ID ٹوکن نہیں دیا۔ Firebase میں OAuth کلائنٹ کنفیگریشن چیک کریں۔</string>
+    <string name="google_sign_in_failed">گوگل سائن ان ناکام (%1$s)۔</string>
+    <string name="google_sign_in_misconfigured">گوگل سائن ان غلط کنفیگر ہے۔ Firebase/Google Cloud میں پیکج نام، SHA-1/SHA-256 اور Web Client ID چیک کریں۔</string>
+
+    <!-- Profile on Detail screen -->
+    <string name="profile_label">پروفائل</string>
+    <string name="please_add_profile_first">پہلے پروفائل شامل کریں</string>
+    <string name="add_bill_for_customer">اس گاہک کے لیے بل شامل کریں</string>
+    <string name="view_profile">پروفائل دیکھیں</string>
+
+    <!-- Monthly Overview drill-down -->
+    <string name="bills_in_month">%1$s %2$d</string>
+    <string name="no_bills_this_month">اس ماہ کوئی بل نہیں</string>
+    <string name="tap_month_to_view">مہینے پر ٹیپ کر کے بلز دیکھیں</string>
+    <string name="month_paid">ادا شدہ</string>
+    <string name="month_unpaid">غیر ادا</string>
+
+    <!-- Payment System -->
+    <string name="partial">جزوی</string>
+    <string name="total_amount_hint">کل رقم *</string>
+    <string name="paid_amount_hint">ادا شدہ رقم</string>
+    <string name="remaining_label">بقایا</string>
+    <string name="total_label">کل</string>
+    <string name="add_payment">ادائیگی شامل کریں</string>
+    <string name="pay">ادا کریں</string>
+    <string name="amount_exceeds_remaining">رقم بقایا بیلنس سے زیادہ ہے</string>
+    <string name="remaining_format">بقایا: %1$s</string>
+    <string name="amount_max_hint">رقم (زیادہ سے زیادہ: %1$s)</string>
+    <string name="rem_format">بقایا: %1$s / %2$s</string>
+    <string name="paid_format">ادا شدہ: %1$s</string>
+    <string name="billed_label">بل شدہ</string>
+    <string name="outstanding_label">بقایا جات</string>
+    <string name="payment_summary">ادائیگی خلاصہ</string>
+
+    <!-- Dashboard extras -->
+    <string name="growth_rate_format">↑ %1$d%% ادائیگی شرح</string>
+    <string name="bills_count_format">%1$d بلز</string>
+    <string name="paid_count_format">%1$d ادا شدہ</string>
+    <string name="unpaid_count_format">%1$d غیر ادا</string>
+    <string name="top_customers">سرکردہ گاہک</string>
+    <string name="customer_stats_format">%1$d ادا شدہ · %2$d غیر ادا</string>
+    <string name="selected_count_format">%1$d منتخب</string>
+    <string name="total_outstanding">کل بقایا</string>
+    <string name="collected_this_month">اس ماہ وصول شدہ</string>
+
+    <!-- Workers module -->
+    <string name="sign_in_required">سائن ان ضروری ہے</string>
+    <string name="no_shop_found">کوئی دکان نہیں ملی</string>
+    <string name="failed_load_workers">ورکرز لوڈ نہیں ہو سکے</string>
+    <string name="worker_id_missing">ورکر ID موجود نہیں</string>
+    <string name="worker_approved">ورکر منظور!</string>
+    <string name="failed_save_permissions">اجازتیں محفوظ نہیں ہو سکیں</string>
+    <string name="worker_removed">ورکر ہٹا دیا گیا</string>
+    <string name="failed_generate_invite">دعوت نامہ تیار نہیں ہو سکا</string>
+    <string name="no_id_token">ID ٹوکن موصول نہیں ہوا</string>
+    <string name="sign_in_failed">سائن ان ناکام</string>
+    <string name="firebase_auth_failed">Firebase تصدیق ناکام</string>
+    <string name="joined_shop">دکان میں کامیابی سے شامل!</string>
+    <string name="invalid_invite_link">غلط دعوت لنک</string>
+    <string name="sign_in_to_accept">دعوت قبول کرنے کے لیے سائن ان کریں</string>
+    <string name="ready_to_join">شامل ہونے کے لیے تیار؟</string>
+    <string name="signing_in">سائن ان ہو رہا ہے…</string>
+    <string name="joining_shop">دکان میں شامل ہو رہے ہیں…</string>
+
+    <!-- Settings extras -->
+    <string name="signed_in_success">کامیابی سے سائن ان!</string>
+    <string name="export_failed_format">ایکسپورٹ ناکام: %1$s</string>
+    <string name="disconnected">منقطع ہو گیا</string>
+    <string name="sync_failed_format">%1$s: %2$s</string>
+    <string name="restore_failed_format">%1$s: %2$s</string>
+
+    <!-- Profile extras -->
+    <string name="no_permission_edit_customers">گاہکوں میں ترمیم کی اجازت نہیں</string>
+    <string name="profile_deleted">پروفائل حذف ہو گیا</string>
+    <string name="failed_to_delete">حذف نہیں ہو سکا</string>
+    <string name="no_permission_delete_customers">گاہکوں کو حذف کرنے کی اجازت نہیں</string>
+    <string name="failed_load_image">تصویر لوڈ نہیں ہو سکی</string>
+    <string name="error_format">خرابی: %1$s</string>
+    <string name="update_profile">پروفائل اپ ڈیٹ کریں</string>
+
+    <!-- Gallery extras -->
+    <string name="no_permission_delete_bills">بلز حذف کرنے کی اجازت نہیں</string>
+    <string name="no_permission">اجازت نہیں</string>
+    <string name="no_permission_export">بلز ایکسپورٹ کرنے کی اجازت نہیں</string>
+    <string name="no_records_to_export">ایکسپورٹ کے لیے کوئی ریکارڈ نہیں</string>
+    <string name="no_unpaid_bills">کوئی غیر ادا بلز نہیں</string>
+    <string name="no_bills_in_range">مقررہ مدت میں کوئی بل نہیں</string>
+    <string name="no_customers">کوئی گاہک نہیں</string>
+    <string name="no_bills_for_this_customer">اس گاہک کے لیے کوئی بل نہیں</string>
+    <string name="no_permission_edit_bills">بلز میں ترمیم کی اجازت نہیں</string>
+
+    <!-- Save/OCR/Preview -->
+    <string name="high_risk_warning">اس گاہک کے لیے دیر سے ادائیگی کا زیادہ خطرہ!</string>
+    <string name="ocr_extraction_complete">OCR نکالنا مکمل!</string>
+    <string name="ocr_failed_manual">OCR ناکام۔ دستی طریقے سے جاری ہے۔</string>
+    <string name="ocr_failed_format">OCR ناکام: %1$s</string>
+
+    <!-- Onboarding -->
+    <string name="continue_with_google">گوگل سے جاری رکھیں</string>
+    <string name="google_sign_in_not_configured_short">گوگل سائن ان کنفیگر نہیں ہے</string>
+    <string name="failed_setup_account">اکاؤنٹ سیٹ اپ ناکام</string>
+
+    <!-- Language -->
+    <string name="language">Language</string>
+    <string name="language_urdu">زبان</string>
+    <string name="english_label">English</string>
+    <string name="urdu_label">اردو</string>
+
+    <!-- Notification channel -->
+    <string name="channel_bill_reminders">بل یاد دہانیاں</string>
+    <string name="channel_bill_reminders_desc">بل ادائیگی یاد دہانیوں کی اطلاعات</string>
+
+    <!-- OCR Settings -->
+    <string name="ocr_performance">OCR کارکردگی</string>
+</resources>

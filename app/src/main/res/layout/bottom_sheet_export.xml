@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="?attr/colorCardSurface">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_options"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorTextPrimary"
+        android:layout_marginBottom="8dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportSingle"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_single"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorTextSecondary"
+        android:gravity="start|center_vertical"
+        app:icon="@drawable/ic_export"
+        app:iconTint="?attr/colorAccentLight"
+        app:iconGravity="textStart" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportUnpaid"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_unpaid"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorTextSecondary"
+        android:gravity="start|center_vertical"
+        app:icon="@drawable/ic_export"
+        app:iconTint="?attr/colorAccentLight"
+        app:iconGravity="textStart" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportDateRange"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_date_range"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorTextSecondary"
+        android:gravity="start|center_vertical"
+        app:icon="@drawable/ic_export"
+        app:iconTint="?attr/colorAccentLight"
+        app:iconGravity="textStart" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportByCustomer"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_by_customer"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorTextSecondary"
+        android:gravity="start|center_vertical"
+        app:icon="@drawable/ic_export"
+        app:iconTint="?attr/colorAccentLight"
+        app:iconGravity="textStart" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnExportFiltered"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/export_filtered"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorTextSecondary"
+        android:gravity="start|center_vertical"
+        app:icon="@drawable/ic_export"
+        app:iconTint="?attr/colorAccentLight"
+        app:iconGravity="textStart" />
+</LinearLayout>

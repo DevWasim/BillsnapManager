@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Chip background for "Customer Statement" label — uses primaryContainer -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="?attr/colorPrimaryContainer" />
+    <corners android:radius="12dp" />
+</shape>

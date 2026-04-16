@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">BillSnap Manager</string>
+    <string name="home_subtitle">Capture &amp; manage your bills</string>
+    <string name="camera">Camera</string>
+    <string name="gallery">Gallery</string>
+    <string name="profiles">Profiles</string>
+    <string name="flip_camera">Flip Camera</string>
+    <string name="capture">Capture Photo</string>
+    <string name="captured_image">Captured Image</string>
+    <string name="retake">Retake</string>
+    <string name="save">Save</string>
+    <string name="save_details">Save Details</string>
+    <string name="name_hint">Name *</string>
+    <string name="notes_hint">Notes (optional)</string>
+    <string name="payment_status">Payment Status</string>
+    <string name="paid">Paid</string>
+    <string name="unpaid">Unpaid</string>
+    <string name="overdue">Overdue</string>
+    <string name="due_soon">Due Soon</string>
+    <string name="save_bill">Save Bill</string>
+    <string name="search_hint">Search by name…</string>
+    <string name="export_pdf">Export to PDF</string>
+    <string name="no_bills">No bills yet. Tap Camera to get started!</string>
+    <string name="bill_thumbnail">Bill thumbnail</string>
+    <string name="bill_image">Bill image</string>
+    <string name="notes_label">Notes</string>
+    <string name="date_label">Date</string>
+    <string name="time_label">Time</string>
+    <string name="saved_to_gallery">Image saved to Pictures/BillSnap</string>
+    <string name="close">Close</string>
+
+    <!-- Profile strings -->
+    <string name="add_profile">Add Profile</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="no_profiles">No profiles yet. Tap + to add your first customer!</string>
+    <string name="no_bills_for_customer">No bills for this customer yet.</string>
+    <string name="profile_image">Profile image</string>
+    <string name="search_profiles_hint">Search profiles…</string>
+    <string name="customer_name_hint">Customer Name *</string>
+    <string name="phone_hint">Phone (optional)</string>
+    <string name="details_hint">Details (optional)</string>
+    <string name="pick_photo">Pick Photo</string>
+    <string name="customer_hint">Customer</string>
+
+    <!-- Reminder strings -->
+    <string name="set_reminder">Set Reminder</string>
+    <string name="pick_date">Pick Date</string>
+    <string name="pick_time">Pick Time</string>
+    <string name="reminder_notification_title">BillSnap Reminder</string>
+    <string name="reminder_notification_text">Bill \"%1$s\" is due. Tap to view.</string>
+
+    <!-- Detail screen -->
+    <string name="created_on">Created</string>
+    <string name="paid_on">Paid On</string>
+
+    <!-- Dashboard strings -->
+    <string name="dashboard">Dashboard</string>
+    <string name="total_bills">Total Bills</string>
+    <string name="total_customers">Customers</string>
+    <string name="monthly_overview">Monthly Overview</string>
+
+    <!-- Settings strings -->
+    <string name="settings">Settings</string>
+    <string name="security">Security</string>
+    <string name="enable_app_lock">Enable App Lock</string>
+    <string name="lock_method">Lock Method</string>
+    <string name="fingerprint">Fingerprint</string>
+    <string name="pin_code">PIN Code</string>
+    <string name="set_pin">Set PIN</string>
+    <string name="enter_pin">Enter PIN</string>
+    <string name="confirm_pin">Confirm PIN</string>
+    <string name="pin_mismatch">PINs do not match</string>
+    <string name="pin_set_success">PIN set successfully</string>
+    <string name="unlock_with_fingerprint">Unlock with Fingerprint</string>
+    <string name="use_pin_instead">Use PIN</string>
+    <string name="cloud_backup">Cloud Backup</string>
+    <string name="sign_in_google">Sign in with Google</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="sync_now">Sync Now</string>
+    <string name="last_synced">Last Synced</string>
+    <string name="never_synced">Never</string>
+    <string name="syncing">Syncing…</string>
+    <string name="sync_complete">Sync complete</string>
+    <string name="sync_failed">Sync failed</string>
+    <string name="signed_in_as">Signed in as %1$s</string>
+
+    <!-- Gallery filter strings -->
+    <string name="filter">Filter</string>
+    <string name="all_statuses">All Statuses</string>
+    <string name="all_customers">All Customers</string>
+    <string name="start_date">Start Date</string>
+    <string name="end_date">End Date</string>
+    <string name="apply_filter">Apply</string>
+    <string name="reset_filter">Reset</string>
+    <string name="delete_confirm">Delete this bill?</string>
+    <string name="delete_confirm_multi">Delete %1$d selected bills?</string>
+    <string name="cancel">Cancel</string>
+    <string name="delete">Delete</string>
+    <string name="marked_as_paid">Marked as Paid</string>
+    <string name="undo">Undo</string>
+
+    <!-- Export strings -->
+    <string name="export_options">Export Options</string>
+    <string name="export_single">Export Selected</string>
+    <string name="export_unpaid">Export Unpaid Only</string>
+    <string name="export_date_range">Export by Date Range</string>
+    <string name="export_by_customer">Export by Customer</string>
+    <string name="export_filtered">Export Current Results</string>
+    <string name="select_customer">Select Customer</string>
+
+    <!-- OCR strings -->
+    <string name="ocr_mode">OCR Mode</string>
+    <string name="ocr_scanning">Scanning text…</string>
+    <string name="ocr_no_text">No text detected</string>
+
+    <!-- Lock screen -->
+    <string name="app_locked">App Locked</string>
+    <string name="enter_pin_to_unlock">Enter PIN to unlock</string>
+    <string name="wrong_pin">Wrong PIN</string>
+
+    <!-- Reminder -->
+    <string name="reminder_date">Reminder</string>
+    <string name="customer_label">Customer</string>
+    <string name="none">None</string>
+    <string name="add_new_profile">+ Add New Profile</string>
+
+    <!-- Dashboard export -->
+    <string name="export_dashboard">Export Dashboard</string>
+    <string name="export_full_summary">Export Full Dashboard Summary</string>
+    <string name="export_bills_breakdown">Export Bills Breakdown</string>
+    <string name="export_customers_summary">Export Customers Summary</string>
+    <string name="export_payments_report">Export Payments Report</string>
+
+    <!-- Appearance -->
+    <string name="appearance">Appearance</string>
+    <string name="theme_preference">Theme Preference</string>
+    <string name="theme_day">Day</string>
+    <string name="theme_night">Night</string>
+
+    <!-- Detail extras -->
+    <string name="export_bill">Export Bill</string>
+    <string name="status_history">Status History</string>
+    <string name="created_label">Created</string>
+    <string name="paid_label">Paid</string>
+    <string name="reminder_label">Reminder</string>
+    <string name="not_set">Not set</string>
+
+    <!-- Cloud Backup extras -->
+    <string name="backup_now">Backup Now</string>
+    <string name="restore_backup">Restore Backup</string>
+    <string name="connected_to">Connected to: %1$s</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="restoring">Restoring…</string>
+    <string name="restore_complete">Restore complete</string>
+    <string name="restore_failed">Restore failed</string>
+    <string name="sync_status_idle">Status: Idle</string>
+    <string name="sync_status_syncing">Status: Syncing…</string>
+    <string name="sync_status_error">Status: Error</string>
+    <string name="download_backup">Download Backup File</string>
+    <string name="google_sign_in_not_configured">Google sign-in is not configured. Add a valid google-services.json from Firebase (with OAuth client IDs and SHA fingerprints) and rebuild.</string>
+    <string name="google_sign_in_canceled">Google sign-in canceled.</string>
+    <string name="google_sign_in_missing_id_token">Google sign-in did not return an ID token. Check OAuth client configuration in Firebase.</string>
+    <string name="google_sign_in_failed">Google sign-in failed (%1$s).</string>
+    <string name="google_sign_in_misconfigured">Google sign-in is misconfigured (developer error). Verify package name, SHA-1/SHA-256, and Web client ID in Firebase/Google Cloud.</string>
+
+    <!-- Profile on Detail screen -->
+    <string name="profile_label">Profile</string>
+    <string name="please_add_profile_first">Please add a profile first</string>
+    <string name="add_bill_for_customer">Add bill for this customer</string>
+    <string name="view_profile">View Profile</string>
+
+    <!-- Monthly Overview drill-down -->
+    <string name="bills_in_month">%1$s %2$d</string>
+    <string name="no_bills_this_month">No bills this month</string>
+    <string name="tap_month_to_view">Tap a month to view bills</string>
+    <string name="month_paid">Paid</string>
+    <string name="month_unpaid">Unpaid</string>
+
+    <!-- Payment System -->
+    <string name="partial">Partial</string>
+    <string name="total_amount_hint">Total Amount *</string>
+    <string name="paid_amount_hint">Paid Amount</string>
+    <string name="remaining_label">Remaining</string>
+    <string name="total_label">Total</string>
+    <string name="add_payment">Add Payment</string>
+    <string name="pay">Pay</string>
+    <string name="amount_exceeds_remaining">Amount exceeds remaining balance</string>
+    <string name="remaining_format">Remaining: %1$s</string>
+    <string name="amount_max_hint">Amount (max: %1$s)</string>
+    <string name="rem_format">Rem: %1$s / %2$s</string>
+    <string name="paid_format">Paid: %1$s</string>
+    <string name="billed_label">Total</string>
+    <string name="outstanding_label">Remaining</string>
+    <string name="payment_summary">Payment Summary</string>
+
+    <!-- Dashboard extras -->
+    <string name="growth_rate_format">↑ %1$d%% paid rate</string>
+    <string name="bills_count_format">%1$d bills</string>
+    <string name="paid_count_format">%1$d Paid</string>
+    <string name="unpaid_count_format">%1$d Unpaid</string>
+    <string name="top_customers">Top Customers</string>
+    <string name="customer_stats_format">%1$d paid · %2$d unpaid</string>
+    <string name="selected_count_format">%1$d selected</string>
+    <string name="total_outstanding">Total Remaining</string>
+    <string name="collected_this_month">Collected This Month</string>
+
+    <!-- Workers module -->
+    <string name="sign_in_required">Sign in required</string>
+    <string name="no_shop_found">No shop found</string>
+    <string name="failed_load_workers">Failed to load workers</string>
+    <string name="worker_id_missing">Worker ID missing</string>
+    <string name="worker_approved">Worker approved!</string>
+    <string name="failed_save_permissions">Failed to save permissions</string>
+    <string name="worker_removed">Worker removed</string>
+    <string name="failed_generate_invite">Failed to generate invite</string>
+    <string name="no_id_token">No ID token received</string>
+    <string name="sign_in_failed">Sign-in failed</string>
+    <string name="firebase_auth_failed">Firebase auth failed</string>
+    <string name="joined_shop">Successfully joined shop!</string>
+    <string name="invalid_invite_link">Invalid Invite Link</string>
+    <string name="sign_in_to_accept">Sign in to accept invite</string>
+    <string name="ready_to_join">Ready to join?</string>
+    <string name="signing_in">Signing in…</string>
+    <string name="joining_shop">Joining Shop…</string>
+
+    <!-- Settings extras -->
+    <string name="signed_in_success">Signed in successfully!</string>
+    <string name="export_failed_format">Export failed: %1$s</string>
+    <string name="disconnected">Disconnected</string>
+    <string name="sync_failed_format">%1$s: %2$s</string>
+    <string name="restore_failed_format">%1$s: %2$s</string>
+
+    <!-- Profile extras -->
+    <string name="no_permission_edit_customers">No permission to edit customers</string>
+    <string name="profile_deleted">Profile deleted</string>
+    <string name="failed_to_delete">Failed to delete</string>
+    <string name="no_permission_delete_customers">No permission to delete customers</string>
+    <string name="failed_load_image">Failed to load image</string>
+    <string name="error_format">Error: %1$s</string>
+    <string name="update_profile">Update Profile</string>
+
+    <!-- Gallery extras -->
+    <string name="no_permission_delete_bills">No permission to delete bills</string>
+    <string name="no_permission">No permission</string>
+    <string name="no_permission_export">No permission to export bills</string>
+    <string name="no_records_to_export">No records to export</string>
+    <string name="no_unpaid_bills">No unpaid bills</string>
+    <string name="no_bills_in_range">No bills in range</string>
+    <string name="no_customers">No customers</string>
+    <string name="no_bills_for_this_customer">No bills for this customer</string>
+    <string name="no_permission_edit_bills">No permission to edit bills</string>
+
+    <!-- Save/OCR/Preview -->
+    <string name="high_risk_warning">High Late Payment Risk for this customer!</string>
+    <string name="ocr_extraction_complete">OCR Extraction complete!</string>
+    <string name="ocr_failed_manual">OCR failed. Continuing manually.</string>
+    <string name="ocr_failed_format">OCR failed: %1$s</string>
+
+    <!-- Onboarding -->
+    <string name="continue_with_google">Continue with Google</string>
+    <string name="google_sign_in_not_configured_short">Google Sign-In not configured</string>
+    <string name="failed_setup_account">Failed to setup account</string>
+
+    <!-- Language -->
+    <string name="language">Language</string>
+    <string name="language_urdu">زبان</string>
+    <string name="english_label">English</string>
+    <string name="urdu_label">اردو</string>
+
+    <!-- Notification channel -->
+    <string name="channel_bill_reminders">Bill Reminders</string>
+    <string name="channel_bill_reminders_desc">Notifications for bill payment reminders</string>
+
+    <!-- OCR Settings -->
+    <string name="ocr_performance">OCR Performance</string>
+    <string name="advanced_optimization">Advanced Image Optimization</string>
+    <string name="advanced_optimization_desc">Improves contrast, fixes perspective, and saves in high-efficiency WebP format.</string>
+    <!-- Share Card Feature -->
+    <string name="share_bill">Share Bill</string>
+    <string name="share_profile">Share Profile</string>
+    <string name="payment_reminder">Payment Reminder</string>
+    <string name="payment_received">Payment Received</string>
+    <string name="customer_statement">Customer Statement</string>
+    <string name="invoice_id_label">Invoice ID</string>
+    <string name="invoice_date_label">Invoice Date</string>
+    <string name="due_date_label">Due Date</string>
+    <string name="today_date_label">Today</string>
+    <string name="original_amount_label">Original Amount</string>
+    <string name="paid_amount_label">Paid Amount</string>
+    <string name="remaining_amount_label">Remaining Amount</string>
+    <string name="overdue_by_days">Overdue by %1$d days</string>
+    <string name="payment_completed">Payment Completed</string>
+    <string name="on_time_stats">Paid %1$d out of %2$d invoices on time</string>
+    <string name="more_invoices_not_shown">+%1$d more invoices not shown</string>
+    <string name="invoices_overdue">%1$d invoices overdue</string>
+    <string name="no_pending_dues">No pending dues</string>
+    <string name="thank_you_business">Thank you for your business</string>
+    <string name="generating_share_card">Generating share card…</string>
+    <string name="share_card_failed">Failed to generate share card</string>
+    <string name="on_time_payment_label">On-time Payment</string>
+    <string name="total_bills_label">Total Bills</string>
+    <string name="total_paid_label">Total Paid</string>
+    <string name="total_outstanding_label">Total Outstanding</string>
+    <string name="recent_activity">Recent Activity</string>
+    <string name="recent_invoices_label">Recent Invoices</string>
+    <string name="payment_options_label">Payment Options</string>
+    <string name="remaining_balance_label">Remaining Balance</string>
+    <string name="all_dues_cleared">All dues cleared</string>
+    <string name="pending_invoices_label">Pending Invoices</string>
+    <string name="all_invoices_paid">All invoices paid</string>
+    <string name="powered_by_billsnap">Powered by BillSnap Manager</string>
+    <string name="more_pending_invoices">+%1$d more pending invoices</string>
+    <string name="payment_completed_chip">Payment Completed</string>
+
+    <!-- Payment Methods Settings -->
+    <string name="payment_methods">Payment Methods</string>
+    <string name="store_name_hint">Store / Business Name</string>
+    <string name="store_logo">Store Logo</string>
+    <string name="pick_logo">Pick Logo</string>
+    <string name="bank_account">Bank Account</string>
+    <string name="easypaisa">EasyPaisa</string>
+    <string name="jazzcash">JazzCash</string>
+    <string name="account_number_hint">Account Number / IBAN</string>
+    <string name="account_title_hint">Account Title</string>
+    <string name="show_on_shared_cards">Show on shared cards</string>
+    <string name="share_bill_message">Here is the payment details for invoice %1$s. Please review.</string>
+    <string name="share_profile_message">Here is the account statement for %1$s. Please review.</string>
+</resources>

@@ -1,0 +1,75 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isShopOwner(shopId) {
+      return get(/databases/$(database)/documents/shops/$(shopId)).data.ownerId == request.auth.uid;
+    }
+    
+    // Safely check if worker has a specific permission
+    // Returns true if permissions map exists AND the key is true
+    function workerHasPermission(shopId, perm) {
+      let workerData = get(/databases/$(database)/documents/shops/$(shopId)/shopWorkers/$(request.auth.uid)).data;
+      return workerData.keys().hasAny(['permissions']) 
+             && workerData.permissions.keys().hasAny([perm]) 
+             && workerData.permissions[perm] == true;
+    }
+    
+    function isWorkerActive(shopId) {
+      return get(/databases/$(database)/documents/shops/$(shopId)/shopWorkers/$(request.auth.uid)).data.status == 'active';
+    }
+    
+    // Worker can access a resource if active AND has the specific permission OR fullAccess
+    function workerCanAccess(shopId, perm) {
+      return isWorkerActive(shopId) && (workerHasPermission(shopId, perm) || workerHasPermission(shopId, 'fullAccess'));
+    }
+
+    match /users/{userId} {
+      allow read: if isSignedIn();
+      allow create: if isSignedIn() && request.auth.uid == userId;
+      allow update: if isSignedIn() && request.auth.uid == userId;
+    }
+
+    match /shops/{shopId} {
+      allow read: if isSignedIn() && (isShopOwner(shopId) || isWorkerActive(shopId));
+      allow create: if isSignedIn();
+      allow update: if isSignedIn() && isShopOwner(shopId);
+
+      match /shopWorkers/{workerId} {
+        allow read: if isSignedIn() && (isShopOwner(shopId) || request.auth.uid == workerId);
+        allow write: if isSignedIn() && isShopOwner(shopId);
+        allow create: if isSignedIn() && request.auth.uid == workerId;
+      }
+      
+      match /customers/{customerId} {
+        allow read: if isSignedIn() && (isShopOwner(shopId) || workerCanAccess(shopId, 'viewCustomers'));
+        allow write: if isSignedIn() && (isShopOwner(shopId) || workerCanAccess(shopId, 'editCustomers'));
+      }
+      
+      match /bills/{billId} {
+        allow read: if isSignedIn() && (isShopOwner(shopId) || workerCanAccess(shopId, 'viewBills'));
+        allow write: if isSignedIn() && (isShopOwner(shopId) || workerCanAccess(shopId, 'editBills'));
+      }
+
+      match /activity_logs/{logId} {
+        allow read: if isSignedIn() && (isShopOwner(shopId) || (isWorkerActive(shopId) && resource.data.workerId == request.auth.uid));
+        allow create: if isSignedIn() && (isShopOwner(shopId) || isWorkerActive(shopId));
+      }
+
+      match /ocr_corrections/{correctionId} {
+        allow read: if isSignedIn() && (isShopOwner(shopId) || isWorkerActive(shopId));
+        allow write: if isSignedIn() && (isShopOwner(shopId) || isWorkerActive(shopId));
+      }
+    }
+    
+    match /invites/{inviteId} {
+      allow create: if isSignedIn() && isShopOwner(request.resource.data.shopId);
+      allow read: if isSignedIn();
+      allow update: if isSignedIn();
+    }
+  }
+}

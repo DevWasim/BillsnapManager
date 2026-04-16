@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPageBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <!-- Top Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="12dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_back"
+                app:iconTint="?attr/colorTextPrimary" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/settings"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorTextPrimary" />
+        </LinearLayout>
+
+        <!-- APPEARANCE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/appearance"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorAccentPrimary"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardSurface"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorCardStroke">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/theme_preference"
+                    android:textSize="14sp"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp" />
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleTheme"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnThemeDay"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/theme_day"
+                        app:icon="@drawable/ic_sun"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/colorTextPrimary"
+                        app:strokeColor="?attr/colorAccentPrimary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnThemeNight"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/theme_night"
+                        app:icon="@drawable/ic_moon"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/colorTextPrimary"
+                        app:strokeColor="?attr/colorAccentPrimary" />
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CURRENCY -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="CURRENCY"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorAccentPrimary"
+            android:letterSpacing="0.12"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardSurface"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorCardStroke">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Display Currency"
+                    android:textSize="14sp"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:layout_marginBottom="12dp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:boxStrokeColor="?attr/colorAccentPrimary"
+                    app:hintEnabled="false">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/autoCompleteCurrency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:padding="12dp" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- LANGUAGE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/language"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorAccentPrimary"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardSurface"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorCardStroke">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/language_urdu"
+                    android:textSize="14sp"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp" />
+
+                <com.google.android.material.button.MaterialButtonToggleGroup
+                    android:id="@+id/toggleLanguage"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:singleSelection="true"
+                    app:selectionRequired="true">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLangEnglish"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/english_label"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/colorTextPrimary"
+                        app:strokeColor="?attr/colorAccentPrimary" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLangUrdu"
+                        style="@style/Widget.Material3.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/urdu_label"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/colorTextPrimary"
+                        app:strokeColor="?attr/colorAccentPrimary" />
+
+                </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Section label helper macro -->
+        <!-- SECURITY -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/security"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorAccentPrimary"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardSurface"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorCardStroke">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/enable_app_lock"
+                        android:textSize="15sp"
+                        android:textColor="?attr/colorTextPrimary" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchAppLock"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutFingerprint"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="12dp"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/fingerprint"
+                        android:textSize="15sp"
+                        android:textColor="?attr/colorTextPrimary" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchFingerprint"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSetPin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/set_pin"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorTextPrimary"
+                    android:visibility="gone"
+                    app:backgroundTint="?attr/colorCardSurface"
+                    app:strokeColor="?attr/colorAccentPrimary"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="12dp" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- OCR PERFORMANCE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/ocr_performance"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorAccentPrimary"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardSurface"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorCardStroke">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="High Accuracy Mode"
+                            android:textSize="15sp"
+                            android:textColor="?attr/colorTextPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Uses more power for better recognition"
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorTextSecondary"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchOcrAccuracy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorDivider"
+                    android:layout_marginVertical="12dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/advanced_optimization"
+                            android:textSize="15sp"
+                            android:textColor="?attr/colorTextPrimary" />
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/advanced_optimization_desc"
+                            android:textSize="12sp"
+                            android:textColor="?attr/colorTextSecondary"
+                            android:layout_marginTop="2dp" />
+                    </LinearLayout>
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchOptimization"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- PROFILE -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorAccentPrimary"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardSurface"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorCardStroke">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGoogleSignIn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Login / Sign In with Google"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorTextPrimary"
+                    app:backgroundTint="?attr/colorButtonPrimary"
+                    app:cornerRadius="12dp" />
+
+                <LinearLayout
+                    android:id="@+id/layoutProfileInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="?attr/colorTextPrimary" />
+
+                    <TextView
+                        android:id="@+id/tvProfileEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:textColor="?attr/colorTextSecondary"
+                        android:layout_marginTop="4dp" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnLogout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Logout"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/colorDangerText"
+                        app:backgroundTint="?attr/colorCardSurface"
+                        app:strokeColor="?attr/colorDangerText"
+                        app:strokeWidth="1dp"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- PAYMENT METHODS -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_methods"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorTextHint"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="8dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="16dp"
+            android:layout_marginBottom="8dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardSurface"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorCardStroke">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <!-- Store Name -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/store_name_hint"
+                    app:boxCornerRadiusTopStart="12dp"
+                    app:boxCornerRadiusTopEnd="12dp"
+                    app:boxCornerRadiusBottomStart="12dp"
+                    app:boxCornerRadiusBottomEnd="12dp"
+                    android:layout_marginBottom="16dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etStoreName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="?attr/colorTextPrimary" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Bank Account Group -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_bank"
+                        android:layout_marginEnd="12dp"
+                        android:contentDescription="@string/bank_account" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/bank_account"
+                        android:textSize="15sp"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchBankEnabled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutBankFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="36dp"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/account_title_hint"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBankTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:textColor="?attr/colorTextPrimary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/account_number_hint"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etBankNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textColor="?attr/colorTextPrimary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/show_on_shared_cards"
+                            android:textSize="13sp"
+                            android:textColor="?attr/colorTextSecondary" />
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchBankShare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorDivider"
+                    android:layout_marginVertical="8dp" />
+
+                <!-- EasyPaisa Group -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_mobile_payment"
+                        android:layout_marginEnd="12dp"
+                        android:contentDescription="@string/easypaisa" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/easypaisa"
+                        android:textSize="15sp"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchEasyPaisaEnabled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutEasyPaisaFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="36dp"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/account_title_hint"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etEasyPaisaTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:textColor="?attr/colorTextPrimary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/account_number_hint"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etEasyPaisaNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            android:textColor="?attr/colorTextPrimary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/show_on_shared_cards"
+                            android:textSize="13sp"
+                            android:textColor="?attr/colorTextSecondary" />
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchEasyPaisaShare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Divider -->
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="?attr/colorDivider"
+                    android:layout_marginVertical="8dp" />
+
+                <!-- JazzCash Group -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="4dp">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_mobile_payment"
+                        android:layout_marginEnd="12dp"
+                        android:contentDescription="@string/jazzcash" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="@string/jazzcash"
+                        android:textSize="15sp"
+                        android:textColor="?attr/colorTextPrimary"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.materialswitch.MaterialSwitch
+                        android:id="@+id/switchJazzCashEnabled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/layoutJazzCashFields"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingStart="36dp"
+                    android:visibility="gone">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/account_title_hint"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etJazzCashTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="textPersonName"
+                            android:maxLines="1"
+                            android:textColor="?attr/colorTextPrimary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/account_number_hint"
+                        app:boxCornerRadiusTopStart="10dp"
+                        app:boxCornerRadiusTopEnd="10dp"
+                        app:boxCornerRadiusBottomStart="10dp"
+                        app:boxCornerRadiusBottomEnd="10dp"
+                        android:layout_marginBottom="8dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etJazzCashNumber"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            android:textColor="?attr/colorTextPrimary" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/show_on_shared_cards"
+                            android:textSize="13sp"
+                            android:textColor="?attr/colorTextSecondary" />
+
+                        <com.google.android.material.materialswitch.MaterialSwitch
+                            android:id="@+id/switchJazzCashShare"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- CLOUD BACKUP -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cloud_backup"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorAccentPrimary"
+            android:textAllCaps="true"
+            android:letterSpacing="0.12"
+            android:paddingHorizontal="20dp"
+            android:paddingTop="20dp"
+            android:paddingBottom="6dp" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="12dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:cardBackgroundColor="?attr/colorCardSurface"
+            app:strokeWidth="1dp"
+            app:strokeColor="?attr/colorCardStroke">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvSignedInAs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:visibility="gone"
+                    android:layout_marginTop="8dp" />
+
+                <TextView
+                    android:id="@+id/tvSyncStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:visibility="gone"
+                    android:layout_marginTop="4dp" />
+
+                <TextView
+                    android:id="@+id/tvLastSynced"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:textColor="?attr/colorTextSecondary"
+                    android:visibility="gone"
+                    android:layout_marginTop="4dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSyncNow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/backup_now"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorTextPrimary"
+                    android:visibility="gone"
+                    app:backgroundTint="?attr/colorButtonPrimary"
+                    app:cornerRadius="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRestoreBackup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/restore_backup"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorTextPrimary"
+                    android:visibility="gone"
+                    app:backgroundTint="?attr/colorCardSurface"
+                    app:strokeColor="?attr/colorAccentPrimary"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="12dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnDownloadBackup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/download_backup"
+                    android:textAllCaps="false"
+                    android:textColor="?attr/colorTextPrimary"
+                    android:visibility="gone"
+                    app:backgroundTint="?attr/colorCardSurface"
+                    app:strokeColor="?attr/colorCardStroke"
+                    app:strokeWidth="1dp"
+                    app:cornerRadius="12dp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+</ScrollView>

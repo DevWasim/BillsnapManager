@@ -1,0 +1,585 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    V4 Premium Statement Share Card — STRICT specification.
+    All colors hardcoded from share_* palette. No Material dynamic.
+    Inflated offscreen, rendered to 1080×1920 JPEG 92%.
+    V4.1 Engineering: EXACTLY measurement, wrap_content height, auto-sizing text.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootShareCard"
+    android:layout_width="1080px"
+    android:layout_height="1920px"
+    android:background="@drawable/bg_share_gradient"
+    android:padding="48dp">
+
+    <!-- ═══ MAIN CARD CONTAINER ═══ -->
+    <!-- Wrapped height to eliminate empty bottom space -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cardContainer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_share_card_main"
+        android:padding="32dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- ═══════════════ HEADER ═══════════════ -->
+
+        <ImageView
+            android:id="@+id/ivStoreLogo"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:contentDescription="@null"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvStoreName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:textColor="@color/share_white"
+            android:textStyle="bold"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginStart="14dp"
+            android:layout_marginEnd="14dp"
+            app:layout_constraintTop_toTopOf="@id/ivStoreLogo"
+            app:layout_constraintStart_toEndOf="@id/ivStoreLogo"
+            app:layout_constraintEnd_toStartOf="@id/ivCustomerAvatar"
+            tools:text="BillSnap Store" />
+
+        <TextView
+            android:id="@+id/tvStatementChip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/customer_statement"
+            android:paddingHorizontal="14dp"
+            android:paddingVertical="6dp"
+            android:textSize="12sp"
+            android:textColor="@color/share_white"
+            android:background="@drawable/bg_share_chip_accent"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStoreName"
+            app:layout_constraintStart_toStartOf="@id/tvStoreName" />
+
+        <ImageView
+            android:id="@+id/ivCustomerAvatar"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:scaleType="centerCrop"
+            android:visibility="gone"
+            android:contentDescription="@null"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvInitialBadge"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:gravity="center"
+            android:textSize="24sp"
+            android:textColor="@color/share_white"
+            android:textStyle="bold"
+            android:background="@drawable/bg_share_initial_circle"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="M" />
+
+        <!-- ═══════════════ CUSTOMER NAME ═══════════════ -->
+
+        <TextView
+            android:id="@+id/tvCustomerName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="28sp"
+            android:textColor="@color/share_white"
+            android:textStyle="bold"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStatementChip"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Muhammad Ali Khan" />
+
+        <View
+            android:id="@+id/dividerName"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/share_divider"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@id/tvCustomerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- ═══════════════ FINANCIAL GRID ═══════════════ -->
+        <!-- Fixed 50% guideline for exactly perfect equal columns -->
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideHalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <!-- Row 1 Left: Total Bills -->
+        <TextView
+            android:id="@+id/lblTotalBills"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/total_bills_label"
+            android:textSize="14sp"
+            android:textColor="@color/share_label_muted"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/dividerName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideHalf" />
+
+        <TextView
+            android:id="@+id/tvTotalBills"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/share_white"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/lblTotalBills"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideHalf"
+            tools:text="12" />
+
+        <!-- Row 1 Right: Paid Amount -->
+        <TextView
+            android:id="@+id/lblPaid"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/total_paid_label"
+            android:textSize="14sp"
+            android:textColor="@color/share_label_muted"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@id/dividerName"
+            app:layout_constraintStart_toEndOf="@id/guideHalf"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- V4.1 Auto-size strict constraints for Paid -->
+        <TextView
+            android:id="@+id/tvPaidAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/share_paid_green"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="8dp"
+            android:maxLines="1"
+            android:ellipsize="none"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="18sp"
+            app:autoSizeMaxTextSize="20sp"
+            app:autoSizeStepGranularity="1sp"
+            app:layout_constraintTop_toBottomOf="@id/lblPaid"
+            app:layout_constraintStart_toEndOf="@id/guideHalf"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Rs. 120,000" />
+
+        <!-- Row 2 Left: On-time Payment -->
+        <TextView
+            android:id="@+id/lblOnTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/on_time_payment_label"
+            android:textSize="14sp"
+            android:textColor="@color/share_label_muted"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvTotalBills"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideHalf" />
+
+        <TextView
+            android:id="@+id/tvOnTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/share_white"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintTop_toBottomOf="@id/lblOnTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guideHalf"
+            tools:text="75%" />
+
+        <!-- Row 2 Right: REMAINING BALANCE (dominant) -->
+        <TextView
+            android:id="@+id/lblRemaining"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/remaining_balance_label"
+            android:textSize="14sp"
+            android:textColor="@color/share_label_muted"
+            android:layout_marginTop="24dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvPaidAmount"
+            app:layout_constraintStart_toEndOf="@id/guideHalf"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- V4.1 Auto-size strict constraints for Remaining Balance -->
+        <TextView
+            android:id="@+id/tvRemainingBalance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/share_unpaid_red"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="8dp"
+            android:maxLines="1"
+            android:ellipsize="none"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="18sp"
+            app:autoSizeMaxTextSize="32sp"
+            app:autoSizeStepGranularity="1sp"
+            app:layout_constraintTop_toBottomOf="@id/lblRemaining"
+            app:layout_constraintStart_toEndOf="@id/guideHalf"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="Rs. 30,000" />
+
+        <!-- Check icon next to Remaining when cleared (hidden by default) -->
+        <!-- Added end-to-end constraint bias to place it nicely if texts shrink -->
+        <ImageView
+            android:id="@+id/ivClearedCheck"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:src="@drawable/ic_check_circle"
+            android:visibility="gone"
+            app:tint="@color/share_paid_green"
+            app:layout_constraintTop_toTopOf="@id/tvRemainingBalance"
+            app:layout_constraintBottom_toBottomOf="@id/tvRemainingBalance"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:contentDescription="@null" />
+
+        <!-- ═══ ANCHOR for sections below financial grid ═══ -->
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrierFinancial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="tvOnTime,tvRemainingBalance" />
+
+        <!-- ═══════════════ PENDING INVOICES ═══════════════ -->
+
+        <TextView
+            android:id="@+id/lblPending"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/pending_invoices_label"
+            android:textSize="18sp"
+            android:textColor="@color/share_white"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/barrierFinancial"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Invoice Row 1 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rowInv1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/lblPending"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tvInv1Id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/share_white"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvInv1Amt"
+                app:layout_constraintHorizontal_bias="0"
+                android:layout_marginEnd="8dp"
+                tools:text="INV-00123" />
+
+            <TextView
+                android:id="@+id/tvInv1Amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/share_white"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvInv1Status"
+                tools:text="Rs. 5,000" />
+
+            <TextView
+                android:id="@+id/tvInv1Status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:textSize="12sp"
+                android:textColor="@color/share_white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Unpaid" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Invoice Row 2 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rowInv2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/rowInv1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tvInv2Id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/share_white"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvInv2Amt"
+                app:layout_constraintHorizontal_bias="0"
+                android:layout_marginEnd="8dp"
+                tools:text="INV-00124" />
+
+            <TextView
+                android:id="@+id/tvInv2Amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/share_white"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvInv2Status"
+                tools:text="Rs. 8,000" />
+
+            <TextView
+                android:id="@+id/tvInv2Status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:textSize="12sp"
+                android:textColor="@color/share_white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Overdue" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- Invoice Row 3 -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rowInv3"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/rowInv2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <TextView
+                android:id="@+id/tvInv3Id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/share_white"
+                android:maxLines="1"
+                android:ellipsize="end"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvInv3Amt"
+                app:layout_constraintHorizontal_bias="0"
+                android:layout_marginEnd="8dp"
+                tools:text="INV-00125" />
+
+            <TextView
+                android:id="@+id/tvInv3Amt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textColor="@color/share_white"
+                android:textStyle="bold"
+                android:layout_marginEnd="10dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/tvInv3Status"
+                tools:text="Rs. 3,500" />
+
+            <TextView
+                android:id="@+id/tvInv3Status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="12dp"
+                android:paddingVertical="4dp"
+                android:textSize="12sp"
+                android:textColor="@color/share_white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="Partial" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- +X more pending invoices -->
+        <TextView
+            android:id="@+id/tvMorePending"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:textColor="@color/share_label_muted"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/rowInv3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="+4 more pending invoices" />
+
+        <!-- ═══════════════ OVERDUE WARNING ═══════════════ -->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layoutOverdueWarning"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:paddingVertical="10dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="0dp"
+            android:background="@drawable/bg_share_overdue_warning"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/tvMorePending"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <View
+                android:id="@+id/viewOverdueAccent"
+                android:layout_width="6dp"
+                android:layout_height="0dp"
+                android:background="@color/share_unpaid_red"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/tvOverdueText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/share_white"
+                android:textStyle="bold"
+                android:layout_marginStart="14dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/viewOverdueAccent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:text="1 invoice overdue" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- ═══════════════ PAYMENT METHODS ═══════════════ -->
+
+        <TextView
+            android:id="@+id/lblPayMethods"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/payment_options_label"
+            android:textSize="18sp"
+            android:textColor="@color/share_white"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/layoutOverdueWarning"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <!-- Vertical LinearLayout for guaranteed stability as requested -->
+        <LinearLayout
+            android:id="@+id/containerPaymentMethods"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            app:layout_constraintTop_toBottomOf="@id/lblPayMethods"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <!-- Payment methods dynamically inflated here -->
+        </LinearLayout>
+
+        <!-- ═══════════════ FOOTER ═══════════════ -->
+
+        <View
+            android:id="@+id/footerDivider"
+            android:layout_width="60dp"
+            android:layout_height="1dp"
+            android:background="@color/share_divider"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/containerPaymentMethods"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvFooterStore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="18sp"
+            android:textColor="@color/share_white"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_marginTop="14dp"
+            app:layout_constraintTop_toBottomOf="@id/footerDivider"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="BillSnap Store" />
+
+        <TextView
+            android:id="@+id/tvFooterPowered"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/powered_by_billsnap"
+            android:textSize="14sp"
+            android:textColor="@color/share_label_muted"
+            android:layout_marginTop="4dp"
+            app:layout_constraintTop_toBottomOf="@id/tvFooterStore"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

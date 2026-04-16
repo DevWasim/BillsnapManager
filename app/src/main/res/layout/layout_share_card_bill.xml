@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Offscreen share card layout for a SINGLE BILL share image.
+    Rendered to a 1080x1920 bitmap by ShareCardGenerator.
+    All colors use theme attributes for dark/light mode support.
+-->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="1080px"
+    android:layout_height="1920px"
+    android:background="?attr/colorSurface">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="40px">
+
+            <!-- ═══ HEADER ═══ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24px">
+
+                <ImageView
+                    android:id="@+id/ivStoreLogo"
+                    android:layout_width="80px"
+                    android:layout_height="80px"
+                    android:scaleType="centerCrop"
+                    android:visibility="gone"
+                    android:layout_marginEnd="20px"
+                    android:contentDescription="@string/store_logo"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/tvStoreName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold"
+                    android:maxLines="2"
+                    android:ellipsize="end"
+                    tools:text="BillSnap Store" />
+            </LinearLayout>
+
+            <!-- Status Tag -->
+            <TextView
+                android:id="@+id/tvStatusTag"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="24px"
+                android:paddingVertical="10px"
+                android:textAppearance="?attr/textAppearanceLabelLarge"
+                android:textColor="?attr/colorOnPrimaryContainer"
+                android:background="@drawable/bg_share_tag"
+                android:layout_marginBottom="32px"
+                tools:text="Payment Reminder" />
+
+            <!-- ═══ MAIN INFO ═══ -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24px">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="32px">
+
+                    <!-- Customer Name -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/customer_label"
+                        android:textAppearance="?attr/textAppearanceLabelMedium"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginBottom="4px" />
+
+                    <TextView
+                        android:id="@+id/tvCustomerName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?attr/textAppearanceTitleLarge"
+                        android:textColor="?attr/colorOnSurface"
+                        android:textStyle="bold"
+                        android:maxLines="2"
+                        android:ellipsize="end"
+                        android:layout_marginBottom="20px"
+                        tools:text="Muhammad Ali Khan" />
+
+                    <!-- Invoice ID -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8px">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/invoice_id_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvInvoiceId"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="bold"
+                            android:maxLines="1"
+                            android:ellipsize="end"
+                            tools:text="INV-00123" />
+                    </LinearLayout>
+
+                    <!-- Invoice Date -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8px">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/invoice_date_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvInvoiceDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurface"
+                            tools:text="Feb 15, 2026" />
+                    </LinearLayout>
+
+                    <!-- Due Date -->
+                    <LinearLayout
+                        android:id="@+id/layoutDueDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="8px">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/due_date_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvDueDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurface"
+                            tools:text="Feb 28, 2026" />
+                    </LinearLayout>
+
+                    <!-- Today Date -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/today_date_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvTodayDate"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurface"
+                            tools:text="Feb 22, 2026" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ═══ AMOUNTS ═══ -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="24dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorSurfaceVariant"
+                app:strokeWidth="0dp"
+                android:layout_marginBottom="24px">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="32px">
+
+                    <!-- Original Amount -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12px">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/original_amount_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvOriginalAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="bold"
+                            tools:text="Rs. 15,000" />
+                    </LinearLayout>
+
+                    <!-- Paid Amount -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="12px">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/paid_amount_label"
+                            android:textAppearance="?attr/textAppearanceBodyMedium"
+                            android:textColor="?attr/colorOnSurfaceVariant" />
+
+                        <TextView
+                            android:id="@+id/tvPaidAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="?attr/colorPrimary"
+                            android:textStyle="bold"
+                            tools:text="Rs. 5,000" />
+                    </LinearLayout>
+
+                    <!-- Divider -->
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="2px"
+                        android:background="?attr/colorOutline"
+                        android:layout_marginBottom="12px" />
+
+                    <!-- Remaining Amount -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/remaining_amount_label"
+                            android:textAppearance="?attr/textAppearanceTitleMedium"
+                            android:textColor="?attr/colorOnSurface"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvRemainingAmount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?attr/textAppearanceHeadlineSmall"
+                            android:textColor="?attr/colorError"
+                            android:textStyle="bold"
+                            tools:text="Rs. 10,000" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- ═══ OVERDUE / PAID INDICATOR ═══ -->
+            <LinearLayout
+                android:id="@+id/layoutOverdueIndicator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="24px"
+                android:background="@drawable/bg_share_indicator"
+                android:layout_marginBottom="24px"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <View
+                    android:id="@+id/viewIndicatorBar"
+                    android:layout_width="6px"
+                    android:layout_height="48px"
+                    android:background="?attr/colorError"
+                    android:layout_marginEnd="16px" />
+
+                <TextView
+                    android:id="@+id/tvOverdueLabel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?attr/textAppearanceTitleSmall"
+                    android:textColor="?attr/colorOnErrorContainer"
+                    tools:text="Overdue by 5 days" />
+            </LinearLayout>
+
+            <!-- ═══ TIMELINE BAR ═══ -->
+            <LinearLayout
+                android:id="@+id/layoutTimeline"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginBottom="24px"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <!-- Timeline dots + line -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:paddingHorizontal="16px">
+
+                    <View
+                        android:layout_width="16px"
+                        android:layout_height="16px"
+                        android:background="@drawable/bg_timeline_dot" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="3px"
+                        android:layout_weight="1"
+                        android:background="?attr/colorOutline" />
+
+                    <View
+                        android:layout_width="16px"
+                        android:layout_height="16px"
+                        android:background="@drawable/bg_timeline_dot" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="3px"
+                        android:layout_weight="1"
+                        android:background="?attr/colorOutline" />
+
+                    <View
+                        android:id="@+id/viewTimelineDotToday"
+                        android:layout_width="16px"
+                        android:layout_height="16px"
+                        android:background="@drawable/bg_timeline_dot_active" />
+                </LinearLayout>
+
+                <!-- Timeline labels -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="8px">
+
+                    <TextView
+                        android:id="@+id/tvTimelineInvoice"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="?attr/textAppearanceLabelSmall"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:gravity="start"
+                        tools:text="Feb 15" />
+
+                    <TextView
+                        android:id="@+id/tvTimelineDue"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="?attr/textAppearanceLabelSmall"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:gravity="center"
+                        tools:text="Feb 28" />
+
+                    <TextView
+                        android:id="@+id/tvTimelineToday"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:textAppearance="?attr/textAppearanceLabelSmall"
+                        android:textColor="?attr/colorPrimary"
+                        android:gravity="end"
+                        android:textStyle="bold"
+                        tools:text="Today" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- ═══ MINI ANALYTICS ═══ -->
+            <TextView
+                android:id="@+id/tvMiniAnalytics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?attr/textAppearanceBodySmall"
+                android:textColor="?attr/colorOnSurfaceVariant"
+                android:gravity="center"
+                android:paddingVertical="12px"
+                android:layout_marginBottom="24px"
+                android:visibility="gone"
+                tools:visibility="visible"
+                tools:text="Paid 3 out of 5 invoices on time" />
+
+            <!-- ═══ PAYMENT METHODS ═══ -->
+            <LinearLayout
+                android:id="@+id/layoutPaymentMethods"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone"
+                android:layout_marginBottom="24px"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/payment_methods"
+                    android:textAppearance="?attr/textAppearanceLabelLarge"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12px" />
+
+                <!-- Payment methods dynamically inflated here -->
+            </LinearLayout>
+
+            <!-- ═══ FOOTER ═══ -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:paddingTop="16px">
+
+                <View
+                    android:layout_width="80px"
+                    android:layout_height="2px"
+                    android:background="?attr/colorOutline"
+                    android:layout_marginBottom="16px" />
+
+                <TextView
+                    android:id="@+id/tvFooterStoreName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textAppearance="?attr/textAppearanceLabelMedium"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:maxLines="1"
+                    android:ellipsize="end"
+                    tools:text="BillSnap Store" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/thank_you_business"
+                    android:textAppearance="?attr/textAppearanceLabelSmall"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:layout_marginTop="4px" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>

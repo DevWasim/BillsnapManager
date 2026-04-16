@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPageBackground"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Top Bar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnBack"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_back"
+                app:iconTint="?attr/colorTextPrimary" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnShareBill"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:visibility="gone"
+                app:icon="@drawable/ic_share"
+                app:iconTint="?attr/colorTextPrimary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnExportBill"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_export"
+                app:iconTint="?attr/colorTextPrimary" />
+        </LinearLayout>
+
+        <!-- Full Image -->
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="match_parent"
+            android:layout_height="280dp"
+            android:scaleType="fitCenter"
+            android:background="@android:color/black"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:contentDescription="@string/bill_image" />
+
+        <!-- Content Card -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Name -->
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorTextPrimary"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Profile Section -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorCardSurface"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorCardStroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="12dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/ivProfileImage"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_person_add"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.App.CornerSize50Percent"
+                        android:background="?attr/colorDivider"
+                        android:contentDescription="@string/profile_image" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:orientation="vertical"
+                        android:layout_marginStart="12dp">
+
+                        <TextView
+                            android:id="@+id/tvProfileName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="15sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorTextPrimary"
+                            android:maxLines="1"
+                            android:ellipsize="end" />
+
+                        <TextView
+                            android:id="@+id/tvProfilePhone"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="13sp"
+                            android:textColor="?attr/colorTextSecondary"
+                            android:maxLines="1"
+                            android:visibility="gone" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_back"
+                        android:rotation="180"
+                        app:tint="#77FFFFFF"
+                        android:contentDescription="@string/view_profile" />
+
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Add Profile Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddProfile"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_profile"
+                android:textAllCaps="false"
+                android:textColor="?attr/colorTextPrimary"
+                android:visibility="gone"
+                app:backgroundTint="?attr/colorCardSurface"
+                app:strokeColor="?attr/colorAccentPrimary"
+                app:strokeWidth="1dp"
+                app:icon="@drawable/ic_person_add"
+                app:iconTint="?attr/colorAccentLight"
+                app:cornerRadius="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Notes Label -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notes_label"
+                android:textSize="11sp"
+                android:textColor="?attr/colorTextHint"
+                android:textAllCaps="true"
+                android:letterSpacing="0.12" />
+
+            <TextView
+                android:id="@+id/tvNotes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textColor="?attr/colorTextSecondary"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- View OCR Results Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewOcr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View OCR Results"
+                android:textAllCaps="false"
+                android:textColor="?attr/colorTextPrimary"
+                android:visibility="gone"
+                app:backgroundTint="?attr/colorCardSurface"
+                app:strokeColor="?attr/colorAccentPrimary"
+                app:strokeWidth="1dp"
+                app:icon="@drawable/ic_search"
+                app:iconTint="?attr/colorAccentLight"
+                app:cornerRadius="12dp"
+                android:layout_marginBottom="20dp" />
+
+            <!-- Payment Summary Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPayment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorCardSurface"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorCardStroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="PAYMENT DETAILS"
+                        android:textSize="11sp"
+                        android:textColor="?attr/colorTextHint"
+                        android:textAllCaps="true"
+                        android:letterSpacing="0.12"
+                        android:layout_marginBottom="12dp" />
+
+                    <!-- Total Amount -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total"
+                            android:textSize="14sp"
+                            android:textColor="?attr/colorTextSecondary" />
+
+                        <TextView
+                            android:id="@+id/tvPayTotal"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorTextPrimary" />
+                    </LinearLayout>
+
+                    <!-- Paid Amount -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="6dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Paid"
+                            android:textSize="14sp"
+                            android:textColor="@color/status_paid" />
+
+                        <TextView
+                            android:id="@+id/tvPayPaid"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/status_paid" />
+                    </LinearLayout>
+
+                    <!-- Remaining Amount -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="12dp">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Remaining"
+                            android:textSize="14sp"
+                            android:textColor="?attr/colorAccentLight" />
+
+                        <TextView
+                            android:id="@+id/tvPayRemaining"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorAccentLight" />
+                    </LinearLayout>
+
+                    <!-- Payment Progress Bar -->
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progressPayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="12dp"
+                        app:trackThickness="8dp"
+                        app:trackCornerRadius="4dp"
+                        app:indicatorColor="#69F0AE"
+                        app:trackColor="#2E3140" />
+
+                    <!-- Add Payment Button -->
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnAddPayment"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="Add Payment"
+                        android:textAllCaps="false"
+                        android:textColor="?attr/colorTextPrimary"
+                        app:backgroundTint="?attr/colorButtonPrimary"
+                        app:icon="@drawable/ic_money"
+                        app:iconTint="?attr/colorTextPrimary"
+                        app:cornerRadius="12dp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Status History -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_history"
+                android:textSize="11sp"
+                android:textColor="?attr/colorTextHint"
+                android:textAllCaps="true"
+                android:letterSpacing="0.12"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                app:cardCornerRadius="14dp"
+                app:cardElevation="0dp"
+                app:cardBackgroundColor="?attr/colorCardSurface"
+                app:strokeWidth="1dp"
+                app:strokeColor="?attr/colorCardStroke">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <!-- Created -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/created_label"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="?attr/colorTextSecondary" />
+
+                        <TextView
+                            android:id="@+id/tvCreatedTimestamp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="13sp"
+                            android:textColor="?attr/colorTextSecondary" />
+                    </LinearLayout>
+
+                    <!-- Paid -->
+                    <LinearLayout
+                        android:id="@+id/layoutPaidTimestamp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_marginBottom="8dp"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/paid_label"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/status_paid" />
+
+                        <TextView
+                            android:id="@+id/tvPaidTimestamp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="13sp"
+                            android:textColor="@color/status_paid" />
+                    </LinearLayout>
+
+                    <!-- Payment History Dynamic Wrapper -->
+                    <LinearLayout
+                        android:id="@+id/layoutPaymentHistory"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:layout_marginBottom="8dp" />
+
+                    <!-- Reminder -->
+                    <LinearLayout
+                        android:id="@+id/layoutReminderTimestamp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="wrap_content"
+                            android:text="@string/reminder_label"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/status_due_soon" />
+
+                        <TextView
+                            android:id="@+id/tvReminderTimestamp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textSize="13sp"
+                            android:textColor="@color/status_due_soon" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Payment Status Toggle -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnToggleStatus"
+                android:layout_width="match_parent"
+                android:layout_height="64dp"
+                android:textSize="18sp"
+                android:textAllCaps="false"
+                app:cornerRadius="18dp"
+                app:iconGravity="textStart"
+                app:iconSize="24dp" />
+
+            <!-- Add More Bills Button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddMoreBills"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/add_bill_for_customer"
+                android:textAllCaps="false"
+                android:textColor="?attr/colorTextPrimary"
+                android:visibility="gone"
+                app:backgroundTint="?attr/colorCardSurface"
+                app:strokeColor="?attr/colorCardStroke"
+                app:strokeWidth="1dp"
+                app:icon="@drawable/ic_add_circle"
+                app:iconTint="?attr/colorAccentLight"
+                app:cornerRadius="12dp"
+                android:layout_marginTop="12dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    android:background="?attr/selectableItemBackground"
+    tools:targetApi="m">
+
+    <!-- Material Design 3 Surface Container fallback -->
+    <View
+        android:id="@+id/bgContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_bill_row"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 3dp Status Line -->
+    <View
+        android:id="@+id/viewStatusStripe"
+        android:layout_width="3dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="12dp"
+        android:background="@drawable/bg_status_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 48dp Thumbnail Image -->
+    <ImageView
+        android:id="@+id/ivMonthBillThumb"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="12dp"
+        android:contentDescription="@string/bill_image"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/viewStatusStripe"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:background="#333" />
+
+    <!-- Name & Date -->
+    <TextView
+        android:id="@+id/tvMonthBillName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:textAppearance="?attr/textAppearanceBodyMedium"
+        android:textColor="?attr/colorOnSurface"
+        app:layout_constraintBottom_toTopOf="@+id/tvMonthBillDate"
+        app:layout_constraintEnd_toStartOf="@+id/tvMonthBillStatus"
+        app:layout_constraintStart_toEndOf="@+id/ivMonthBillThumb"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Vendor Name Example" />
+
+    <TextView
+        android:id="@+id/tvMonthBillDate"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="12dp"
+        android:textAppearance="?attr/textAppearanceBodySmall"
+        android:textColor="?attr/colorOnSurfaceVariant"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tvMonthBillStatus"
+        app:layout_constraintStart_toEndOf="@+id/ivMonthBillThumb"
+        app:layout_constraintTop_toBottomOf="@+id/tvMonthBillName"
+        tools:text="Feb 22, 2026" />
+
+    <!-- Compact Status Chip -->
+    <TextView
+        android:id="@+id/tvMonthBillStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/bg_pill_surface_variant"
+        android:paddingHorizontal="10dp"
+        android:paddingVertical="4dp"
+        android:textAppearance="?attr/textAppearanceLabelSmall"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Paid" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

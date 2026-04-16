@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="?attr/colorPageBackground"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Validating Invite..."
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorTextPrimary"
+        android:layout_marginBottom="24dp" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:indeterminateTint="#7C4DFF"
+        android:layout_marginBottom="24dp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSignInGoogle"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Sign In With Google"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorTextPrimary"
+        app:backgroundTint="?attr/colorButtonPrimary"
+        app:cornerRadius="16dp"
+        android:layout_marginBottom="12dp"
+        android:visibility="gone" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnJoinShop"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Join Shop"
+        android:textAllCaps="false"
+        android:textColor="?attr/colorTextPrimary"
+        app:backgroundTint="?attr/colorButtonPrimary"
+        app:cornerRadius="16dp"
+        android:visibility="gone" />
+</LinearLayout>

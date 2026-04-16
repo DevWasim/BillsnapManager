@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <!-- Zoomable Image -->
+    <com.billsnap.manager.util.ZoomableImageView
+        android:id="@+id/zoomableImage"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@string/bill_image" />
+
+    <!-- Close Button -->
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnClose"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="top|start"
+        app:icon="@drawable/ic_close"
+        app:iconTint="@android:color/white" />
+
+</FrameLayout>

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/colorPageBackground">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="12dp"
+        android:background="?attr/colorPageBackground"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnBack"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:icon="@drawable/ic_back"
+            app:iconTint="?attr/colorTextPrimary" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/gallery"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorTextPrimary" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFilter"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:icon="@drawable/ic_filter"
+            app:iconTint="?attr/colorTextPrimary"
+            android:contentDescription="@string/filter" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnExport"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            app:icon="@drawable/ic_export"
+            app:iconTint="?attr/colorTextPrimary"
+            android:contentDescription="@string/export_pdf" />
+    </LinearLayout>
+
+    <!-- Search Bar -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/tilSearch"
+        style="@style/Widget.Material3.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="4dp"
+        android:hint="@string/search_hint"
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconTint="#77FFFFFF"
+        app:hintTextColor="#77FFFFFF"
+        app:boxStrokeColor="#2E3140"
+        app:boxBackgroundColor="?attr/colorInputBackground"
+        app:boxCornerRadiusTopStart="14dp"
+        app:boxCornerRadiusTopEnd="14dp"
+        app:boxCornerRadiusBottomStart="14dp"
+        app:boxCornerRadiusBottomEnd="14dp"
+        app:layout_constraintTop_toBottomOf="@id/topBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/actvSearch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:textColor="?attr/colorTextPrimary"
+            android:maxLines="1"
+            android:completionThreshold="1" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- Multi-Select Action Bar -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/layoutMultiSelect"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="8dp"
+        android:visibility="gone"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:cardBackgroundColor="?attr/colorAccentContainer"
+        app:layout_constraintTop_toBottomOf="@id/tilSearch"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingVertical="4dp">
+
+            <TextView
+                android:id="@+id/tvSelectedCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="?attr/colorAccentLight" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMultiDelete"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_delete"
+                app:iconTint="?attr/colorDangerText" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnMultiExport"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_export"
+                app:iconTint="?attr/colorTextPrimary" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnClearSelection"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                app:icon="@drawable/ic_close"
+                app:iconTint="?attr/colorTextPrimary" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+    <!-- Bills Grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBills"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/layoutMultiSelect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Empty State -->
+    <LinearLayout
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/tilSearch"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_empty"
+            android:alpha="0.3"
+            android:contentDescription="@string/no_bills" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/no_bills"
+            android:textSize="16sp"
+            android:textColor="?attr/colorTextHint" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
